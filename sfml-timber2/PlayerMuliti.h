@@ -10,7 +10,10 @@ protected:
 	sf::Sprite sprite;
 
 	std::string texId;
+	std::string ripId;
 	Sides side;
+
+	bool isDie;
 
 	void SetSide(Sides side);
 public:
@@ -29,6 +32,8 @@ public:
 	void Update(float dt) override;
 	void Draw(sf::RenderWindow& window) override;
 
-
+	Sides GetSide();
+	bool CheckDie();
+	void Die();
 };
 

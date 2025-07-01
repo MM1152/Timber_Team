@@ -17,8 +17,10 @@ PlayerMuliti::PlayerMuliti(const std::string& name, sf::Keyboard::Key key1, sf::
 	:GameObject(name)
 	, key1(key1)
 	, key2(key2)
+	, isDie(false)
 {
 	texId = "graphics/player.png";
+	ripId = "graphics/rip.png";
 }
 
 PlayerMuliti::~PlayerMuliti()
@@ -87,4 +89,20 @@ void PlayerMuliti::Draw(sf::RenderWindow& window)
 	if (active) {
 		window.draw(sprite);
 	}
+}
+
+Sides PlayerMuliti::GetSide()
+{
+	return side;
+}
+
+bool PlayerMuliti::CheckDie()
+{
+	return isDie;
+}
+
+void PlayerMuliti::Die()
+{
+	isDie = true;
+	sprite.setTexture(TEXTURE_MGR.Get(ripId));
 }

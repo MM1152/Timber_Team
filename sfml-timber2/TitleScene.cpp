@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "TitleScene.h"
 #include "TextGo.h"
+#include "SpriteGo.h"
 
 TitleScene::TitleScene()
 	:Scene(SceneIds::Dev1)
@@ -10,12 +11,23 @@ TitleScene::TitleScene()
 void TitleScene::Init()
 {
 	fontIds.push_back("fonts/KOMIKAP_.ttf");
+	texIds.push_back("graphics/background.png");
 
-	TextGo* go = new TextGo("fonts/KOMIKAP_.ttf");
-	go->SetString("GAME START");
-	go->SetCharacterSize(30);
-	go->SetFillColor(sf::Color::White);
-	AddGameObject(go);
+	//배경이미지 띄우기
+	SpriteGo* background = new SpriteGo("graphics/background.png");
+	AddGameObject(background);
+
+	//game start 텍스트 띄우기
+	TextGo* GameStart = new TextGo("fonts/KOMIKAP_.ttf");
+	GameStart->SetString("GAME START");
+	GameStart->SetCharacterSize(150);
+	GameStart->SetFillColor(sf::Color::White);
+	AddGameObject(GameStart);
+	
+
+	
+
+
 
 	//Scene::Init();
 }

@@ -416,3 +416,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+sfml-timber2-bin/sfml-timber2-d.exe

@@ -72,6 +72,9 @@
     <ClInclude Include="UiHud.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneDev1.cpp">
@@ -123,6 +126,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="UiHud.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

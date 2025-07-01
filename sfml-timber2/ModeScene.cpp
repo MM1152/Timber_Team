@@ -21,6 +21,7 @@ void ModeScene::Init()
 	Text1P->SetFillColor(sf::Color::White);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
+
 	Text1P->SetPosition({ windowBounds.width * 0.5f - 520, windowBounds.height * 0.5f - 230 });////////////오리진 값 설정 추가
 	AddGameObject(Text1P);
 
@@ -33,22 +34,22 @@ void ModeScene::Init()
 	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////오리진 값 설정 추가
 	AddGameObject(Text2P);
 
+	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////오리진 값 설정 추가
+	AddGameObject(Text2P);
+
 
 }
 
 void ModeScene::Update(float dt)
 {
 	Scene::Update(dt);
-	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
 	{
-		Text1P->SetCharacterSize(290);
-		Text1P->SetFillColor(sf::Color::Red);
-		SCENE_MGR.ChangeScene(SceneIds::Game);
+		
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+	if (InputMgr::GetKeyDown(sf::Keyboard::Space))
 	{
-		Text2P->SetFillColor(sf::Color::Red);
-		Text2P->SetCharacterSize(290);
-		SCENE_MGR.ChangeScene(SceneIds::Game);
+		SCENE_MGR.ChangeScene(SceneIds::Character);
 	}
 }

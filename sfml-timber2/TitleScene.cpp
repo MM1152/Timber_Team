@@ -4,7 +4,7 @@
 #include "SpriteGo.h"
 
 TitleScene::TitleScene()
-	:Scene(SceneIds::Title)
+	:Scene(SceneIds::Title), CharacterModeCheck(false), PlayModeCheck(false)
 {
 }
 
@@ -36,14 +36,14 @@ void TitleScene::Init()
 	SelectMode->SetPosition({ windowBounds.width - 760, windowBounds.height - 480 });////////////오리진 값 설정 추가
 	AddGameObject(SelectMode);
 
-	//select Character
-	SelectCharacter = new TextGo("fonts/KOMIKAP_.ttf");
-	SelectCharacter->SetString("  SELECT \nCHARACTER");
-	SelectCharacter->SetCharacterSize(100);
-	SelectCharacter->SetFillColor(sf::Color::White);
+	////select Character
+	//SelectCharacter = new TextGo("fonts/KOMIKAP_.ttf");
+	//SelectCharacter->SetString("  SELECT \nCHARACTER");
+	//SelectCharacter->SetCharacterSize(100);
+	//SelectCharacter->SetFillColor(sf::Color::White);
 
-	SelectCharacter->SetPosition({ windowBounds.width - 1560, windowBounds.height - 480 });////////////오리진 값 설정 추가
-	AddGameObject(SelectCharacter);
+	//SelectCharacter->SetPosition({ windowBounds.width - 1560, windowBounds.height - 480 });////////////오리진 값 설정 추가
+	//AddGameObject(SelectCharacter);
 
 	//Scene::Init();
 }
@@ -51,17 +51,15 @@ void TitleScene::Init()
 void TitleScene::Update(float dt)
 {
 	Scene::Update(dt);
-	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
-	{
-		SelectCharacter->SetFillColor(sf::Color::Red);
-		SelectCharacter->SetCharacterSize(90);
-		SCENE_MGR.ChangeScene(SceneIds::Character);
-	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
 	{
 		SelectMode->SetFillColor(sf::Color::Red);
 		SelectMode->SetCharacterSize(90);
+		PlayModeCheck=true;	
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && PlayModeCheck)
+	{
 		SCENE_MGR.ChangeScene(SceneIds::Mode);
 	}
-	
 }

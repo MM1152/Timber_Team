@@ -9,6 +9,8 @@ class TitleScene :
 protected:
     TextGo* SelectMode;
     TextGo* SelectCharacter;
+    int CharacterModeCheck;
+    int PlayModeCheck;
 public:
     TitleScene();
 	void Init() override;

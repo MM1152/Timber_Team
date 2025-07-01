@@ -42,7 +42,7 @@ void SceneMuiltGame::Enter()
 	AddGameObject(tree1);
 	AddGameObject(tree2);
 	AddGameObject(player1);
-	//AddGameObject(player2);
+	AddGameObject(player2);
 
 	Scene::Enter();
 
@@ -52,11 +52,14 @@ void SceneMuiltGame::Enter()
 
 	tree2->SetOrigin(Origins::TC);
 	tree2->SetScale({ 0.5, 1.f });
-	
 	tree2->SetPosition({ (backGround2->GetSprite().getLocalBounds().width * backGround2->GetScale().x + backGround2->GetPosition().x / 2), 0.f});
 	
 	player1->SetOrigin({ -(tree1->GetSprite().getLocalBounds().width * tree1->GetScale().x), 0.f});
 	player1->SetPosition({tree1->GetPosition().x , 700.f});
+
+	player2->SetOrigin({ -(tree2->GetSprite().getLocalBounds().width * tree2->GetScale().x), 0.f });
+	player2->SetPosition({ tree2->GetPosition().x , 700.f });
+
 }
 
 void SceneMuiltGame::Exit()

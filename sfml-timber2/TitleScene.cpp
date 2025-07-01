@@ -55,10 +55,13 @@ void TitleScene::Update(float dt)
 	{
 		SelectCharacter->SetFillColor(sf::Color::Red);
 		SelectCharacter->SetCharacterSize(90);
+		SCENE_MGR.ChangeScene(SceneIds::Character);
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
 	{
 		SelectMode->SetFillColor(sf::Color::Red);
 		SelectMode->SetCharacterSize(90);
+		SCENE_MGR.ChangeScene(SceneIds::Mode);
 	}
+	
 }

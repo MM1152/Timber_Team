@@ -15,6 +15,7 @@ enum class SceneIds
 	None = -1,
 	Title,
 	Mode,
+	Character,
 	Game,
 	Count,
 };

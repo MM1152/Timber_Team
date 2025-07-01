@@ -5,12 +5,15 @@
 //#include "SceneDev2.h"
 #include "TitleScene.h"
 #include "ModeScene.h"
+#include "CharacterScene.h"
 
 void SceneMgr::Init()
 {
 	scenes.push_back(new TitleScene());
 	scenes.push_back(new ModeScene());
+	scenes.push_back(new CharacterScene());
 	scenes.push_back(new SceneGame());
+
 
 	/*
 	scenes.push_back(new SceneGame());

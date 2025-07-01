@@ -22,9 +22,11 @@ void TitleScene::Init()
 	GameStart->SetString("GAME START");
 	GameStart->SetCharacterSize(150);
 	GameStart->SetFillColor(sf::Color::White);
-	AddGameObject(GameStart);
-	
 
+	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
+	GameStart->SetPosition({ windowBounds.width * 0.5f-400, windowBounds.height * 0.5f-220 });////////////
+
+	AddGameObject(GameStart);
 	
 
 

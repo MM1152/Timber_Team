@@ -24,31 +24,41 @@ void TitleScene::Init()
 	GameStart->SetFillColor(sf::Color::White);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
-	GameStart->SetPosition({ windowBounds.width * 0.5f-430, windowBounds.height * 0.5f-250 });////////////
+	GameStart->SetPosition({ windowBounds.width * 0.5f - 430, windowBounds.height * 0.5f - 250 });////////////
 	AddGameObject(GameStart);
-	
+
 	//select Mode
-	TextGo* SelectMode = new TextGo("fonts/KOMIKAP_.ttf");
+	SelectMode = new TextGo("fonts/KOMIKAP_.ttf");
 	SelectMode->SetString("SELECT \n MODE");
 	SelectMode->SetCharacterSize(100);
 	SelectMode->SetFillColor(sf::Color::White);
 
-	SelectMode->SetPosition({ windowBounds.width - 760, windowBounds.height - 480 });////////////
+	SelectMode->SetPosition({ windowBounds.width - 760, windowBounds.height - 480 });////////////오리진 값 설정 추가
 	AddGameObject(SelectMode);
 
 	//select Character
-	TextGo* SelectCharacter = new TextGo("fonts/KOMIKAP_.ttf");
+	SelectCharacter = new TextGo("fonts/KOMIKAP_.ttf");
 	SelectCharacter->SetString("  SELECT \nCHARACTER");
 	SelectCharacter->SetCharacterSize(100);
 	SelectCharacter->SetFillColor(sf::Color::White);
 
-	SelectCharacter->SetPosition({ windowBounds.width - 1560, windowBounds.height - 480 });////////////
+	SelectCharacter->SetPosition({ windowBounds.width - 1560, windowBounds.height - 480 });////////////오리진 값 설정 추가
 	AddGameObject(SelectCharacter);
 
-
-
-
-
-
 	//Scene::Init();
+}
+
+void TitleScene::Update(float dt)
+{
+	Scene::Update(dt);
+	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+	{
+		SelectCharacter->SetFillColor(sf::Color::Red);
+		SelectCharacter->SetCharacterSize(90);
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+	{
+		SelectMode->SetFillColor(sf::Color::Red);
+		SelectMode->SetCharacterSize(90);
+	}
 }

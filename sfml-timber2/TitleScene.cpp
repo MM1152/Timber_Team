@@ -4,7 +4,7 @@
 #include "SpriteGo.h"
 
 TitleScene::TitleScene()
-	:Scene(SceneIds::Dev1)
+	:Scene(SceneIds::Title)
 {
 }
 

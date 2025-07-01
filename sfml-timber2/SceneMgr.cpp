@@ -7,7 +7,7 @@ void SceneMgr::Init()
 	scenes.push_back(new SceneGame());
 	scenes.push_back(new SceneMuiltGame());
 
-	startScene = SceneIds::Dev1;
+	//startScene = SceneIds::Dev1;
 	for (auto scene : scenes)
 	{
 		scene->Init();

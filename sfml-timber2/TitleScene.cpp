@@ -24,10 +24,29 @@ void TitleScene::Init()
 	GameStart->SetFillColor(sf::Color::White);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
-	GameStart->SetPosition({ windowBounds.width * 0.5f-400, windowBounds.height * 0.5f-220 });////////////
-
+	GameStart->SetPosition({ windowBounds.width * 0.5f-430, windowBounds.height * 0.5f-250 });////////////
 	AddGameObject(GameStart);
 	
+	//select Mode
+	TextGo* SelectMode = new TextGo("fonts/KOMIKAP_.ttf");
+	SelectMode->SetString("SELECT \n MODE");
+	SelectMode->SetCharacterSize(100);
+	SelectMode->SetFillColor(sf::Color::White);
+
+	SelectMode->SetPosition({ windowBounds.width - 760, windowBounds.height - 480 });////////////
+	AddGameObject(SelectMode);
+
+	//select Character
+	TextGo* SelectCharacter = new TextGo("fonts/KOMIKAP_.ttf");
+	SelectCharacter->SetString("  SELECT \nCHARACTER");
+	SelectCharacter->SetCharacterSize(100);
+	SelectCharacter->SetFillColor(sf::Color::White);
+
+	SelectCharacter->SetPosition({ windowBounds.width - 1560, windowBounds.height - 480 });////////////
+	AddGameObject(SelectCharacter);
+
+
+
 
 
 

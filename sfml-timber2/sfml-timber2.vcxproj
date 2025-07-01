@@ -27,10 +27,9 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneDev1.h" />
-    <ClInclude Include="SceneDev2.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="SceneMuiltGame.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SpriteGo.h" />
     <ClInclude Include="stdafx.h" />
@@ -47,12 +46,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SceneDev1.cpp" />
-    <ClCompile Include="SceneDev2.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="SceneMuiltGame.cpp" />
     <ClCompile Include="SpriteGo.cpp" />
-    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="TextGo.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UiHud.cpp" />
@@ -150,6 +150,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

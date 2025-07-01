@@ -52,7 +52,6 @@ void SpriteGo::Release()
 void SpriteGo::Reset()
 {
 	sprite.setTexture(TEXTURE_MGR.Get(textureId));
-	Utils::SetOrigin(sprite, originPreset);
 }
 
 void SpriteGo::Update(float dt)

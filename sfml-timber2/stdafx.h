@@ -6,6 +6,8 @@
 #include <list>
 #include <unordered_map>
 #include <algorithm>
+#include <math.h>
+
 
 // SFML
 #include <SFML/Graphics.hpp>
@@ -21,4 +23,7 @@
 #include "Scene.h"
 #include "SceneMgr.h"
 #include "Framework.h"
+
+
+
 

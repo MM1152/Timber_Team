@@ -31,6 +31,8 @@ void SceneGame::Init()
     texIds.push_back("graphics/axe.png");
     texIds.push_back("graphics/rip.png");
     texIds.push_back("graphics/log.png");
+    texIds.push_back("graphics/electric.png");
+    texIds.push_back("graphics/water.png");
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
@@ -114,7 +116,18 @@ void SceneGame::Update(float dt)
             }
             else
             {
-                SOUND_MGR.Play("Chop");
+                if (SCENE_MGR.GetChoiceCharacter() == 0)
+                {
+                    SOUND_MGR.Play("Chop");
+                }
+                if (SCENE_MGR.GetChoiceCharacter() == 1)
+                {
+                    SOUND_MGR.Play("spark");
+                }
+                if (SCENE_MGR.GetChoiceCharacter() == 2)
+                {
+                    SOUND_MGR.Play("wave");
+                }
                 score += 10;
                 uiHud->SetScore(score);
             }
@@ -136,13 +149,28 @@ void SceneGame::Update(float dt)
             }
             else
             {
-                SOUND_MGR.Play("Chop");
+                if (SCENE_MGR.GetChoiceCharacter() == 0)
+                {
+                    SOUND_MGR.Play("Chop");
+                }
+                if (SCENE_MGR.GetChoiceCharacter() == 1)
+                {
+                    SOUND_MGR.Play("spark");
+                }
+                if (SCENE_MGR.GetChoiceCharacter() == 2)
+                {
+                    SOUND_MGR.Play("wave");
+                }
                 score += 10;
                 uiHud->SetScore(score);
             }
         }
 
         player->SetDrawAxe(
+            InputMgr::GetKey(sf::Keyboard::Left) || InputMgr::GetKey(sf::Keyboard::Right));
+        player->SetDrawElec(
+            InputMgr::GetKey(sf::Keyboard::Left) || InputMgr::GetKey(sf::Keyboard::Right));
+        player->SetDrawWater(
             InputMgr::GetKey(sf::Keyboard::Left) || InputMgr::GetKey(sf::Keyboard::Right));
 
         timer -= dt;

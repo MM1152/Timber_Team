@@ -8,10 +8,14 @@ protected:
 	std::string soundId;
 
 	sf::SoundBuffer bufferChop;
+	sf::SoundBuffer bufferSpark;
+	sf::SoundBuffer bufferWave;
 	sf::SoundBuffer bufferDeath;
 	sf::SoundBuffer bufferOutOfTime;
 
 	sf::Sound soundChop;
+	sf::Sound soundSpark;
+	sf::Sound soundWave;
 	sf::Sound soundDeath;
 	sf::Sound soundOutOfTime;
 	//sprite.setTexture(TEXTURE_MGR.Get(textureId));

@@ -1,9 +1,6 @@
 #include "stdafx.h"
-#include "SceneCharacterChoice.h"
-#include "SpriteGo.h"
-#include "TextGo.h"
 
-SceneCharacterChoice::SceneCharacterChoice()
+SceneCharacterChoice::SceneCharacterChoice()    
 	: Scene(SceneIds::CharacterChoice)
 {
 
@@ -74,7 +71,6 @@ void SceneCharacterChoice::Init()
     choiceCharacter = 0;
     isChoice = false;
 
-
     Scene::Init();
 
 }
@@ -90,7 +86,7 @@ void SceneCharacterChoice::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //���߿� 1P Scene �̸����� ��ü
         return;
     }
 
@@ -109,7 +105,6 @@ void SceneCharacterChoice::Update(float dt)
         {
             choiceCharacter = 0;
         }
-
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {

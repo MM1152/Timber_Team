@@ -5,10 +5,12 @@ class DummyLog :
 {
 protected:
 	sf::Sprite dummyLog[5];
-	sf::Vector2f position;
+	sf::Vector2f position[5];
+	
 
 public:
     DummyLog(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, sf::Vector2f dummyRange, const std::string& name);
+	DummyLog(sf::Vector2f dummyRange);
     ~DummyLog()override = default;
 
 	// GameObject을(를) 통해 상속됨

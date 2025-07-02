@@ -10,20 +10,30 @@ Log::Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, 
 	, windowRange(windowRange)
 	,GameObject(name)
 {
+	
+}
+
+//½Â¿¬
+Log::Log(sf::Vector2f windowRange)
+	:windowRange(windowRange)
+{
 
 }
 
 void Log::Init()
 {
+
 }
 
 void Log::Release()
 {
+
 }
 
 void Log::Reset()
 {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 5; i++)
+	{
 		spriteLog[i].setTexture(TEXTURE_MGR.Get(logIds));
 		velocity[i] = { speed , -speed };
 		isActive[i] = false;
@@ -48,8 +58,10 @@ void Log::Update(float dt)
 		}
 	}
 
-	for (int i = 0; i < 5; i++) {
-		if (isActive[i]) {
+	for (int i = 0; i < 5; i++)
+	{
+		if (isActive[i])
+		{
 			sf::Vector2f pos = spriteLog[i].getPosition();
 			velocity[i] += gravity * dt;
 			pos += velocity[i] * dt;
@@ -61,7 +73,8 @@ void Log::Update(float dt)
 
 void Log::Draw(sf::RenderWindow& window)
 {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 5; i++)
+	{
 		if (isActive[i])
 		{
 			window.draw(spriteLog[i]);
@@ -72,12 +85,13 @@ void Log::Draw(sf::RenderWindow& window)
 void Log::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
-
-	if (InitPos.x == -100 && InitPos.y == -100) {
+	if (InitPos.x == -100 && InitPos.y == -100)
+	{
 		InitPos = position;
 	}
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 5; i++)
+	{
 		spriteLog[i].setPosition(position);
 	}
 }
@@ -95,7 +109,8 @@ void Log::SetOrigin(Origins preset)
 void Log::SetScale(const sf::Vector2f& s)
 {
 	scale = s;
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 5; i++)
+	{
 		spriteLog[i].setScale(scale);
 	}
 }

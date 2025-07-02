@@ -4,7 +4,7 @@
 class SpriteGo;
 class TextGo;
 
-class SceneCharacterChoice : public Scene
+class SceneCharacterChoice2p : public Scene
 {
 protected:
 	std::vector<SpriteGo*> characters;
@@ -14,8 +14,8 @@ protected:
 
 
 public:
-	SceneCharacterChoice();
-	~SceneCharacterChoice() override;
+	SceneCharacterChoice2p();
+	~SceneCharacterChoice2p() override;
 
 	void Init() override;
 
@@ -23,7 +23,7 @@ public:
 	void Exit() override;
 	void Update(float dt) override;
 
-	
+
 
 
 

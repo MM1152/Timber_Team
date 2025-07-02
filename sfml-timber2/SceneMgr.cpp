@@ -4,6 +4,7 @@
 #include "SceneDev1.h"
 #include "SceneDev2.h"
 #include "SceneCharacterChoice.h"
+#include "SceneCharacterChoice2p.h"
 
 void SceneMgr::Init()
 {
@@ -11,6 +12,7 @@ void SceneMgr::Init()
 	scenes.push_back(new SceneDev1());
 	scenes.push_back(new SceneDev2());
 	scenes.push_back(new SceneCharacterChoice());
+	scenes.push_back(new SceneCharacterChoice2p());
 
 	for (auto scene : scenes)
 	{

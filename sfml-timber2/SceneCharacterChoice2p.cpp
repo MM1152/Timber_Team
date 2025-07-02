@@ -1,18 +1,18 @@
 #include "stdafx.h"
-#include "SceneCharacterChoice.h"
+#include "SceneCharacterChoice2p.h"
 #include "SpriteGo.h"
 #include "TextGo.h"
 
-SceneCharacterChoice::SceneCharacterChoice()
-	: Scene(SceneIds::CharacterChoice)
+SceneCharacterChoice2p::SceneCharacterChoice2p()
+    : Scene(SceneIds::CharacterChoice2p)
 {
 
 }
-SceneCharacterChoice::~SceneCharacterChoice()
+SceneCharacterChoice2p::~SceneCharacterChoice2p()
 {
 
 }
-void SceneCharacterChoice::Init()
+void SceneCharacterChoice2p::Init()
 {
     texIds.push_back("graphics/background.png");
     texIds.push_back("graphics/player.png");
@@ -21,7 +21,12 @@ void SceneCharacterChoice::Init()
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
-    AddGameObject(new SpriteGo("graphics/background.png"));
+    SpriteGo* back1 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/background.png"));
+    back1->SetScale({ 0.49f , 1.f });
+
+    SpriteGo* back2 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/background.png"));
+    back2->SetScale({ 0.49f , 1.f });
+    back2->SetPosition({ 980 , 0.f });
 
     SpriteGo* char1 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/player.png"));
     char1->SetOrigin(Origins::MC);
@@ -32,10 +37,10 @@ void SceneCharacterChoice::Init()
     char2->SetScale({ 0.5f , 0.5f });
     char2->SetPosition({ 950.f, 500.f });
 
-    SpriteGo*  char3 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
+    SpriteGo* char3 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
     char3->SetOrigin(Origins::MC);
     char3->SetScale({ 0.25f , 0.25f });
-    char3->SetPosition({ 1550.f, 500.f });
+    char3->SetPosition({ 1600.f, 500.f });
 
     characters.push_back(char1);
     characters.push_back(char2);
@@ -80,15 +85,15 @@ void SceneCharacterChoice::Init()
     Scene::Init();
 
 }
-void SceneCharacterChoice::Enter()
+void SceneCharacterChoice2p::Enter()
 {
-	Scene::Enter();
+    Scene::Enter();
 }
-void SceneCharacterChoice::Exit()
+void SceneCharacterChoice2p::Exit()
 {
-	Scene::Exit();
+    Scene::Exit();
 }
-void SceneCharacterChoice::Update(float dt)
+void SceneCharacterChoice2p::Update(float dt)
 {
     if (isChoice)
     {
@@ -132,6 +137,3 @@ void SceneCharacterChoice::Update(float dt)
 
 
 }
-
-
-

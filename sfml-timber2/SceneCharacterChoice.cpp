@@ -87,6 +87,7 @@ void SceneCharacterChoice::Update(float dt)
     if (isChoice)
     {
         SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //���߿� 1P Scene �̸����� ��ü
+        isChoice = false;
         return;
     }
 

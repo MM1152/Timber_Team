@@ -2,6 +2,7 @@
 #include "SoundGo.h"
 
 SoundGo::SoundGo()
+	:soundMute(true), currentMuteCheck(false)
 {
 }
 
@@ -23,21 +24,36 @@ void SoundGo::Init()
 
 void SoundGo::Play(std::string id)
 {
-	if (id == "Chop")
+	if (id == "Chop" && soundMute)
 	{
 		soundChop.play();
 	}
-	if (id == "Death")
+	if (id == "Death" && soundMute)
 	{
 		soundDeath.play();
 	}
-	if (id == "OutOfTime")
+	if (id == "OutOfTime" && soundMute)
 	{
 		soundOutOfTime.play();
 	}
 }
 
-
-
-
-
+bool SoundGo::Mute(bool mute)
+{
+	if (InputMgr::GetKeyDown(sf::Keyboard::Q))
+	{
+		if (currentMuteCheck && !soundMute)
+		{
+			soundMute = mute;
+			currentMuteCheck = false;
+			std::cout << "家府 难扁" << std::endl;
+		}
+		else
+		{
+			soundMute = mute;
+			currentMuteCheck = true;
+			std::cout << "澜家芭" << std::endl;
+		}
+	}
+	return mute;
+}

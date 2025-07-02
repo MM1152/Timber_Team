@@ -7,7 +7,7 @@
 #include "Player.h"
 #include "UiHud.h"
 #include "Log.h"
-
+#include "DummyLog.h" //@
 
 SceneGame::SceneGame()
     : Scene(SceneIds::Game1P)
@@ -31,6 +31,8 @@ void SceneGame::Init()
     texIds.push_back("graphics/axe.png");
     texIds.push_back("graphics/rip.png");
     texIds.push_back("graphics/log.png");
+    texIds.push_back("graphics/muteicon.png");
+    texIds.push_back("graphics/soundicon.png");
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
@@ -64,8 +66,11 @@ void SceneGame::Init()
 void SceneGame::Enter()
 {
     Log* log = new Log(sf::Keyboard::Left , sf::Keyboard::Right , "graphics/log.png");
-
     AddGameObject(log);
+
+    //DummyLog* Dummylog = new DummyLog(sf::Keyboard::Left, sf::Keyboard::Right,"graphics/log.png",{0,0},"dummylog");//@
+    //AddGameObject(Dummylog);
+
     Scene::Enter();
 
     sf::Vector2f pos = tree->GetPosition();
@@ -83,6 +88,9 @@ void SceneGame::Enter()
 
     log->SetPosition({ tree->GetPosition().x , (float)TEXTURE_MGR.Get("graphics/tree.png").getSize().y });
     log->SetOrigin(Origins::BC);
+
+    //Dummylog->SetPosition({ tree->GetPosition().x , (float)TEXTURE_MGR.Get("graphics/tree.png").getSize().y });
+    //Dummylog->SetOrigin(Origins::BC);
     
 }
 
@@ -97,6 +105,17 @@ void SceneGame::Update(float dt)
 
     if (isPlaying)
     {
+        uiHud->SetMuteIcon(true);
+        //家府 酒捞能 弊府扁
+        //if (SOUND_MGR.Mute(true))//@
+        //{
+        //    uiHud->SetMuteIcon(true);
+        //}
+        //else if(SOUND_MGR.Mute(false))
+        //{
+        //    uiHud->SetSoundIcon(true);
+        //}
+
         if (InputMgr::GetKeyDown(sf::Keyboard::Left))
         {
             tree->UpdateBranches();

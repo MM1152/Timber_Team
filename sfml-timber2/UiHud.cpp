@@ -27,6 +27,8 @@ void UiHud::SetTimeBar(float value)
 void UiHud::Init()
 {
 	fontId = "fonts/KOMIKAP_.ttf";
+	texSoundId = "graphics/soundIcon.png";
+	texMuteId = "graphics/muteIcon.png";
 
 	sf::FloatRect bounds = FRAMEWORK.GetWindowBounds();
 
@@ -47,6 +49,9 @@ void UiHud::Init()
 	timeBar.setPosition(bounds.width * 0.5f - timeBarSize.x * 0.5f,
 		bounds.height - 100.f);
 
+	soundIcon.setPosition(20, 20);//@ mute
+	muteIcon.setPosition(20, 20);
+
 }
 
 void UiHud::Release()
@@ -57,6 +62,10 @@ void UiHud::Reset()
 {
 	textScore.setFont(FONT_MGR.Get(fontId));
 	textMessage.setFont(FONT_MGR.Get(fontId));
+	muteIcon.setTexture(TEXTURE_MGR.Get(texMuteId));//@ mute
+	soundIcon.setTexture(TEXTURE_MGR.Get(texSoundId));
+	isShowSoundIcon=true;
+	isShowMuteIcon=true;
 
 	SetScore(0);
 	isShowMessage = true;
@@ -71,9 +80,19 @@ void UiHud::Update(float dt)
 void UiHud::Draw(sf::RenderWindow& window)
 {
 	window.draw(textScore);
+	
 	if (isShowMessage)
 	{
+		std::cout << soundIcon.getPosition().x<<" "<<soundIcon.getPosition().y << std::endl;
 		window.draw(textMessage);
+	}
+	if (isShowSoundIcon)//@ mute
+	{
+		window.draw(soundIcon);
+	}
+	if (isShowMuteIcon)//@ mute
+	{
+		window.draw(muteIcon);
 	}
 	window.draw(timeBar);
 }

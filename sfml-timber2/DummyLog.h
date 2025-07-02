@@ -1,5 +1,8 @@
 #pragma once
+#include "stdafx.h"
+#include "GameObject.h"
 #include "Log.h"
+
 class DummyLog :
     public Log
 {
@@ -10,7 +13,6 @@ protected:
 
 public:
     DummyLog(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, sf::Vector2f dummyRange, const std::string& name);
-	DummyLog(sf::Vector2f dummyRange);
     ~DummyLog()override = default;
 
 	// GameObject을(를) 통해 상속됨
@@ -20,7 +22,7 @@ public:
 	void Update(float dt);
 	void Draw(sf::RenderWindow& window);
 
-	void SetPosition(sf::Vector2f& pos);
+	void SetPosition(const sf::Vector2f& pos);
 	void SetOrigin(Origins preset);
 	void SetScale(const sf::Vector2f& s);
 

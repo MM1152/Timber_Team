@@ -17,6 +17,7 @@ protected:
 	std::string ripTexId;
 	std::string axeTexId;
 
+
 	bool isAlive = true;
 	bool drawAxe = false;
 

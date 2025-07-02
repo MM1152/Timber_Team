@@ -92,7 +92,7 @@ void SceneCharacterChoice::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //나중에 1P Scene 이름으로 교체
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);
         return;
     }
 
@@ -115,9 +115,10 @@ void SceneCharacterChoice::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        SCENE_MGR.SetChoiceCharacter(choiceCharacter);
+
         isChoice = true;
     }
-
     for (int i = 0; i < characterNames.size(); ++i)
     {
         if (i == choiceCharacter)
@@ -129,8 +130,6 @@ void SceneCharacterChoice::Update(float dt)
             characterNames[i]->SetFillColor(sf::Color::White);
         }
     }
-
-
 }
 
 

@@ -9,7 +9,7 @@
 
 
 SceneGame::SceneGame()
-    : Scene(SceneIds::Game1P)
+    : Scene(SceneIds::Game)
 {
 }
 
@@ -31,6 +31,7 @@ void SceneGame::Init()
     texIds.push_back("graphics/rip.png");
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
+
 
     AddGameObject(new SpriteGo("graphics/background.png"));
 
@@ -116,7 +117,6 @@ void SceneGame::Update(float dt)
             {
                 isPlaying = false;
                 FRAMEWORK.SetTimeScale(0.f);
-                SOUND_MGR.Play("Death");
                 player->SetAlive(false);
 
                 uiHud->SetShowMassage(true);
@@ -124,7 +124,6 @@ void SceneGame::Update(float dt)
             }
             else
             {
-                SOUND_MGR.Play("Chop");
                 score += 10;
                 uiHud->SetScore(score);
             }
@@ -137,7 +136,7 @@ void SceneGame::Update(float dt)
         if (timer <= 0.f)
         {
             timer = 0.f;
-            SOUND_MGR.Play("OutOfTime");
+
             isPlaying = false;
             FRAMEWORK.SetTimeScale(0.f);
             player->SetAlive(false);

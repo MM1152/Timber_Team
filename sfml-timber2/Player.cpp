@@ -78,6 +78,19 @@ void Player::Release()
 
 void Player::Reset()
 {
+	int choice = SCENE_MGR.GetChoiceCharacter();
+	switch (choice)
+	{
+	case 0:
+		texPlayerId = "graphics/player.png";
+		break;
+	case 1:
+		texPlayerId = "graphics/pikachu.png";
+		break;
+	case 2:
+		texPlayerId = "graphics/turtle.png";
+		break;
+	}
 	sprite.setTexture(TEXTURE_MGR.Get(texPlayerId));
 	Utils::SetOrigin(sprite, Origins::BC);
 

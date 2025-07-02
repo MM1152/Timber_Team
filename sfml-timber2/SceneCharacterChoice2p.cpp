@@ -207,10 +207,12 @@ void SceneCharacterChoice2p::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        SCENE_MGR.SetChoiceCharacter2p(choiceCharacter2p);
         isChoice2p = true;
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Space))
     {
+        SCENE_MGR.SetChoiceCharacter(choiceCharacter);
         isChoice = true;
     }
 

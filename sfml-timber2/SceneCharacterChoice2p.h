@@ -9,9 +9,14 @@ class SceneCharacterChoice2p : public Scene
 protected:
 	std::vector<SpriteGo*> characters;
 	std::vector<TextGo*> characterNames;
-	int choiceCharacter = 0;
-	bool isChoice = false;
+	std::vector<SpriteGo*> characters2p;
+	std::vector<TextGo*> characterNames2p;
 
+	int choiceCharacter = 0;
+	int choiceCharacter2p = 0;
+
+	bool isChoice = false;
+	bool isChoice2p = false;
 
 public:
 	SceneCharacterChoice2p();

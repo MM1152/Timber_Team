@@ -6,6 +6,8 @@
 #include <list>
 #include <unordered_map>
 #include <algorithm>
+#include <math.h>
+
 
 // SFML
 #include <SFML/Graphics.hpp>
@@ -26,5 +28,8 @@
 #include "SpriteGo.h"
 #include "TextGo.h"
 #include "SoundGo.h"
+
+
+
 
 

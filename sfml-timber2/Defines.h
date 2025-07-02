@@ -18,6 +18,7 @@ enum class SceneIds
 	Game1P,
 	CharacterChoice,
 	CharacterChoice2p,
+	SceneMuiltGame,
 	Count,
 };
 

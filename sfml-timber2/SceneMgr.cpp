@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
 #include "SceneGame.h"
+#include "SceneMuiltGame.h"
 #include "TitleScene.h"
 #include "ModeScene.h"
 #include "SceneCharacterChoice.h"
@@ -13,12 +14,13 @@ void SceneMgr::Init()
 	scenes.push_back(new SceneGame());
 	scenes.push_back(new SceneCharacterChoice());
 	scenes.push_back(new SceneCharacterChoice2p());
+	scenes.push_back(new SceneMuiltGame());
 
+	//startScene = SceneIds::Dev1;
 	for (auto scene : scenes)
 	{
 		scene->Init();
 	}
-
 	currentScene = startScene;
 	scenes[(int)currentScene]->Enter();
 }

@@ -22,7 +22,7 @@ void ModeScene::Init()
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
 
-	Text1P->SetPosition({ windowBounds.width * 0.5f - 520, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text1P->SetPosition({ windowBounds.width * 0.5f - 520, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text1P);
 
 	//Text2P
@@ -31,10 +31,10 @@ void ModeScene::Init()
 	Text2P->SetCharacterSize(360);
 	Text2P->SetFillColor(sf::Color::White);
 
-	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text2P);
 
-	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text2P);
 
 
@@ -66,11 +66,13 @@ void ModeScene::Update(float dt)
 		Text2P->SetCharacterSize(320);
 		playMode2pCheck = true;
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode2pCheck)
-	{
-		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice2p);
-		playMode2pCheck = false;
-	}
+	//if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode2pCheck)
+	//{
+	//	SCENE_MGR.ChangeScene(SceneIds::CharacterChoice2p);
+	//	playMode2pCheck = false;
+	//	SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
+	//	playModeCheck = false;
+	//}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
 	{
 		SCENE_MGR.ChangeScene(SceneIds::Title);

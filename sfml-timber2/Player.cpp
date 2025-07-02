@@ -56,7 +56,6 @@ void Player::Init()
 		texPlayerId = "graphics/turtle.png";
 	}
 
-
 	axeTexId = "graphics/axe.png";
 	ripTexId = "graphics/rip.png";
 

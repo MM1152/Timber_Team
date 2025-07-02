@@ -11,6 +11,8 @@ protected:
 	std::vector<TextGo*> characterNames;
 	std::vector<SpriteGo*> characters2p;
 	std::vector<TextGo*> characterNames2p;
+	TextGo* Ready;
+	TextGo* Ready2p;
 
 	int choiceCharacter = 0;
 	int choiceCharacter2p = 0;

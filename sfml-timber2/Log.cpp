@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Log.h"
+#include "DummyLog.h"
 
-Log::Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, sf::Vector2f windowRange, const std::string& name)
+Log::Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, sf::Vector2f windowRange, const std::string& name) ///windowRange값 변경해서 땅에 닿으면, 이미지 쌓이게 
 	:key1(key1)
 	, key2(key2)
 	, logIds(id)
@@ -41,7 +42,6 @@ void Log::Update(float dt)
 				else {
 					velocity[i] = { -speed , -speed };
 				}
-				
 				isActive[i] = true;
 				break;
 			}
@@ -62,7 +62,8 @@ void Log::Update(float dt)
 void Log::Draw(sf::RenderWindow& window)
 {
 	for (int i = 0; i < 5; i++) {
-		if (isActive[i]) {
+		if (isActive[i])
+		{
 			window.draw(spriteLog[i]);
 		}
 	}
@@ -107,6 +108,7 @@ void Log::CheckOutOfWindow(int idx)
 		velocity[idx] = {speed , -speed};
 	}
 }
+
 
 void Log::SetWindowRange(sf::Vector2f windowRange)
 {

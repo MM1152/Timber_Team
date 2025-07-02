@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
 #include "SceneGame.h"
-//#include "SceneDev1.h"
-//#include "SceneDev2.h"
 #include "TitleScene.h"
 #include "ModeScene.h"
 #include "CharacterScene.h"
+#include "SceneCharacterChoice.h"
+#include "SceneCharacterChoice2p.h"
 
 void SceneMgr::Init()
 {
@@ -13,13 +13,8 @@ void SceneMgr::Init()
 	scenes.push_back(new ModeScene());
 	scenes.push_back(new CharacterScene());
 	scenes.push_back(new SceneGame());
-
-
-	/*
-	scenes.push_back(new SceneGame());
-	scenes.push_back(new SceneDev1());
-	scenes.push_back(new SceneDev2());
-*/
+	scenes.push_back(new SceneCharacterChoice());
+	scenes.push_back(new SceneCharacterChoice2p());
 
 	for (auto scene : scenes)
 	{

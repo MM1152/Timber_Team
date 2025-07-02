@@ -10,7 +10,6 @@ protected:
 	std::vector<Scene*> scenes;
 
 	SceneIds startScene = SceneIds::Title;//////////½Â¿¬
-	//SceneIds startScene = SceneIds::Game;
 	SceneIds currentScene = SceneIds::None;
 	SceneIds nextScene = SceneIds::None;
 

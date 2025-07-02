@@ -29,6 +29,8 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneCharacterChoice.h" />
+    <ClInclude Include="SceneCharacterChoice2p.h" />
     <ClInclude Include="SceneDev1.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
@@ -56,6 +58,8 @@
     <ClCompile Include="ModeScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneCharacterChoice.cpp" />
+    <ClCompile Include="SceneCharacterChoice2p.cpp" />
     <ClCompile Include="SceneDev1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -166,7 +170,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

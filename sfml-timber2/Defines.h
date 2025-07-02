@@ -17,6 +17,8 @@ enum class SceneIds
 	Mode,
 	Character,
 	Game,
+	CharacterChoice,
+	CharacterChoice2p,
 	Count,
 };
 

@@ -21,10 +21,10 @@
   <ItemGroup>
     <ClInclude Include="BackgroundElement.h" />
     <ClInclude Include="Branch.h" />
-    <ClInclude Include="CharacterScene.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="Defines.h" />
+    <ClInclude Include="DummyLog.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputMgr.h" />
@@ -62,8 +62,8 @@
   <ItemGroup>
     <ClCompile Include="BackgroundElement.cpp" />
     <ClCompile Include="Branch.cpp" />
-    <ClCompile Include="CharacterScene.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    <ClCompile Include="DummyLog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />

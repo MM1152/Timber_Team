@@ -15,12 +15,14 @@ protected:
 
 	sf::Vector2f InitPos = { -100.f , -100.f };
 	sf::Vector2f backGroundSize;
-
 	sf::Vector2f windowRange; // 범위 체크용 x = 최소값 , y = 최대값
 
 	bool isActive[5] = {true , true ,true ,true , true};
+
 public:
 	Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id = "", sf::Vector2f windowRange = { 0,(float)FRAMEWORK.GetWindowSize().x }, const std::string& name = "");
+	Log(sf::Vector2f windowRange); //승연
+
 	~Log() override = default;
 	
 	// GameObject을(를) 통해 상속됨

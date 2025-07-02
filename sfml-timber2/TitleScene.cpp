@@ -69,10 +69,6 @@ void TitleScene::Update(float dt)
 		Exit->SetCharacterSize(100);
 		PlayModeCheck=true;	
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && PlayModeCheck)
-	{
-		SCENE_MGR.ChangeScene(SceneIds::Mode);
-	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
 	{
 		SelectMode->SetFillColor(sf::Color::Black);

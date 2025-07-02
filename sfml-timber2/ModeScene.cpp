@@ -17,7 +17,7 @@ void ModeScene::Init()
 	//Text1P
 	Text1P = new TextGo("fonts/KOMIKAP_.ttf");
 	Text1P->SetString("1P");
-	Text1P->SetCharacterSize(400);
+	Text1P->SetCharacterSize(360);
 	Text1P->SetFillColor(sf::Color::White);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();

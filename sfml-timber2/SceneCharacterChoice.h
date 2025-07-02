@@ -3,6 +3,7 @@
 
 class SpriteGo;
 class TextGo;
+class SoundGo;
 
 class SceneCharacterChoice : public Scene
 {

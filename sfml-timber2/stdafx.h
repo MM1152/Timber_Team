@@ -21,6 +21,10 @@
 #include "Scene.h"
 #include "SceneMgr.h"
 #include "Framework.h"
+#include "SceneCharacterChoice.h"
+#include "SceneCharacterChoice2p.h"
 #include "SpriteGo.h"
 #include "TextGo.h"
+#include "SoundGo.h"
+
 

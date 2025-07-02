@@ -134,6 +134,4 @@ void SceneCharacterChoice2p::Update(float dt)
             characterNames[i]->SetFillColor(sf::Color::White);
         }
     }
-
-
 }

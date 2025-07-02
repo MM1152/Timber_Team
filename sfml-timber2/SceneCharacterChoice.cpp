@@ -1,9 +1,6 @@
 #include "stdafx.h"
-#include "SceneCharacterChoice.h"
-#include "SpriteGo.h"
-#include "TextGo.h"
 
-SceneCharacterChoice::SceneCharacterChoice()
+SceneCharacterChoice::SceneCharacterChoice()    
 	: Scene(SceneIds::CharacterChoice)
 {
 
@@ -131,6 +128,7 @@ void SceneCharacterChoice::Update(float dt)
     if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
     {
         SCENE_MGR.ChangeScene(SceneIds::Mode);
+      
     }
 
 

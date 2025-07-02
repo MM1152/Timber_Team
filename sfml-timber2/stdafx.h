@@ -25,9 +25,10 @@
 #include "Framework.h"
 #include "SceneCharacterChoice.h"
 #include "SceneCharacterChoice2p.h"
+#include "SoundGo.h"
 #include "SpriteGo.h"
 #include "TextGo.h"
-#include "SoundGo.h"
+
 
 
 

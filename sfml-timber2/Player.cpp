@@ -42,6 +42,20 @@ void Player::SetPosition(const sf::Vector2f& pos)
 
 void Player::Init()
 {
+	int choice = SCENE_MGR.GetChoiceCharacter();
+	std::cout << SCENE_MGR.GetChoiceCharacter() << std::endl;
+	switch (choice)
+	{
+	case 0:
+		texPlayerId = "graphics/player.png";
+
+	case 1:
+		texPlayerId = "graphics/pikachu.png";
+
+	case 2:
+		texPlayerId = "graphics/turtle.png";
+	}
+
 	axeTexId = "graphics/axe.png";
 	ripTexId = "graphics/rip.png";
 

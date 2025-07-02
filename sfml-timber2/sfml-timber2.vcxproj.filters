@@ -108,6 +108,12 @@
     <ClInclude Include="SoundGo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Octopus.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -195,6 +201,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="SoundGo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Octopus.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

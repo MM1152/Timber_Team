@@ -8,6 +8,8 @@ class Branch;
 class TextScore	;
 class TextGo;
 class Timer;
+class Octopus;
+
 class SceneMuiltGame : public Scene
 {
 protected:
@@ -24,6 +26,8 @@ protected:
 
 	Timer* timer;
 
+	Octopus* octo;
+	Octopus* octo1;
 	bool isPlaying;
 public:
 	SceneMuiltGame();

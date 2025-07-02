@@ -23,11 +23,13 @@ public:
 	PlayerMuliti(const std::string& name , sf::Keyboard::Key key1, sf::Keyboard::Key key2, int index);
 	~PlayerMuliti() override;
 
-	void SetPosition(const sf::Vector2f& pos);
+	void SetPosition(const sf::Vector2f& pos) override;
 	void SetRotation(float rot);
 	void SetOrigin(const sf::Vector2f& o);
 	void SetOrigin(Origins preset);
 	void SetScale(const sf::Vector2f& s);
+	
+
 	// GameObject을(를) 통해 상속됨
 	void Init() override;
 	void Release() override;

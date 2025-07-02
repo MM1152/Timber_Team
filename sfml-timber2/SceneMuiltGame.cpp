@@ -7,6 +7,7 @@
 #include "TextScore.h"
 #include "Log.h"
 #include "Timer.h"
+#include "Octopus.h"
 
 SceneMuiltGame::SceneMuiltGame()
 	:Scene(SceneIds::Title)
@@ -25,7 +26,11 @@ void SceneMuiltGame::Init()
 	texIds.push_back(IMG"log.png");
 	texIds.push_back(IMG"pikachu.png");
 	texIds.push_back(IMG"turtle.png");
+	texIds.push_back(IMG"octopus.png");
+	texIds.push_back(IMG"indiaink.png");
+
 	fontIds.push_back(FONT);
+
 	Scene::Init();
 }
 
@@ -51,13 +56,15 @@ void SceneMuiltGame::Enter()
 	Log* log1 = new Log(sf::Keyboard::Left, sf::Keyboard::Right, IMG"log.png");
 	TextGo* palyer1Info = new TextGo(FONT);
 	TextGo* palyer2Info = new TextGo(FONT);
+	octo = new Octopus(IMG"octopus.png" , "oct" , player1);
+	octo1 = new Octopus(IMG"octopus.png", "oct1" , player2);
+	
 
 	timer = new Timer();
 
 	sf::FloatRect windowSize = FRAMEWORK.GetWindowBounds();
 
 	backGround1->SetScale({ 0.49f , 1.f });
-
 	backGround2->SetScale({ 0.49f , 1.f });
 	backGround2->SetPosition({ (windowSize.width /  2) + 20 , 0.f});
 	
@@ -71,12 +78,15 @@ void SceneMuiltGame::Enter()
 	AddGameObject(player2);
 	AddGameObject(branch1);
 	AddGameObject(branch2);
+	AddGameObject(octo);
+	AddGameObject(octo1);
 	AddGameObject(textScore1);
 	AddGameObject(textScore2);
 	AddGameObject(textCenter);
 	AddGameObject(palyer1Info);
 	AddGameObject(palyer2Info);
 	AddGameObject(timer);
+
 
 	Scene::Enter();
 
@@ -131,6 +141,14 @@ void SceneMuiltGame::Enter()
 	textCenter->SetCharacterSize(100);
 
 	timer->SetPosition({windowSize.width / 2 - timer->GetSize().x / 2 , windowSize.height - 150.f});
+
+	octo->SetOrigin({ -(tree1->GetSprite().getLocalBounds().width * tree1->GetScale().x), 0.f });
+	octo->SetPosition(tree1->GetPosition());
+	octo->Setting(backGround2->GetPosition());
+
+	octo1->SetOrigin({ -(tree2->GetSprite().getLocalBounds().width * tree1->GetScale().x), 0.f });
+	octo1->SetPosition(tree2->GetPosition());
+	octo1->Setting(backGround1->GetPosition());
 }
 
 void SceneMuiltGame::Exit()
@@ -181,6 +199,8 @@ void SceneMuiltGame::Update(float dt)
 			textCenter->Reset();
 			timer->Reset();
 			textCenter->SetString("");
+			octo->Reset();
+			octo1->Reset();
 		}
 	}
 }

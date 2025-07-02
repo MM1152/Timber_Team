@@ -34,6 +34,7 @@ PlayerMuliti::PlayerMuliti(const std::string& name, sf::Keyboard::Key key1, sf::
 
 	ripId = "graphics/rip.png";
 	axeId = "graphics/axe.png";
+	side = Sides::Right;
 }
 
 PlayerMuliti::~PlayerMuliti()

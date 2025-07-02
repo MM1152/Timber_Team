@@ -38,6 +38,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextGo.h" />
     <ClInclude Include="TextScore.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UiHud.h" />
     <ClInclude Include="Utils.h" />
@@ -62,6 +63,7 @@
     </ClCompile>
     <ClCompile Include="TextGo.cpp" />
     <ClCompile Include="TextScore.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UiHud.cpp" />
     <ClCompile Include="Utils.cpp" />

@@ -7,7 +7,7 @@ class PlayerMuliti;
 class Branch;
 class TextScore	;
 class TextGo;
-
+class Timer;
 class SceneMuiltGame : public Scene
 {
 protected:
@@ -21,6 +21,9 @@ protected:
 	TextScore* textScore2;
 
 	TextGo* textCenter;
+
+	Timer* timer;
+
 	bool isPlaying;
 public:
 	SceneMuiltGame();

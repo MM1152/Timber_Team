@@ -6,6 +6,8 @@
 #include "TextGo.h"
 #include "TextScore.h"
 #include "Log.h"
+#include "Timer.h"
+
 SceneMuiltGame::SceneMuiltGame()
 	:Scene(SceneIds::Dev1)
 	,isPlaying(true)
@@ -27,7 +29,6 @@ void SceneMuiltGame::Init()
 
 void SceneMuiltGame::Release()
 {
-
 	Scene::Release();
 }
 
@@ -39,13 +40,18 @@ void SceneMuiltGame::Enter()
 	SpriteGo* tree2 = new SpriteGo(IMG"tree.png");
 	player1 = new PlayerMuliti("Player1", sf::Keyboard::A, sf::Keyboard::D);
 	player2 = new PlayerMuliti("Player2", sf::Keyboard::Left, sf::Keyboard::Right);
-	branch1 = new Branch(IMG"branch.png" , sf::Keyboard::A, sf::Keyboard::D , "branch1");
-	branch2 = new Branch(IMG"branch.png", sf::Keyboard::Left, sf::Keyboard::Right , "branch2");
-	textScore1 = new TextScore(sf::Keyboard::A, sf::Keyboard::D , FONT);
+	branch1 = new Branch(IMG"branch.png", sf::Keyboard::A, sf::Keyboard::D, "branch1");
+	branch2 = new Branch(IMG"branch.png", sf::Keyboard::Left, sf::Keyboard::Right, "branch2");
+	textScore1 = new TextScore(sf::Keyboard::A, sf::Keyboard::D, FONT);
 	textScore2 = new TextScore(sf::Keyboard::Left, sf::Keyboard::Right, FONT);
 	textCenter = new TextGo(FONT);
 	Log* log = new Log(sf::Keyboard::A, sf::Keyboard::D, IMG"log.png");
 	Log* log1 = new Log(sf::Keyboard::Left, sf::Keyboard::Right, IMG"log.png");
+	TextGo* palyer1Info = new TextGo(FONT);
+	TextGo* palyer2Info = new TextGo(FONT);
+
+	timer = new Timer();
+
 	sf::FloatRect windowSize = FRAMEWORK.GetWindowBounds();
 
 	backGround1->SetScale({ 0.49f , 1.f });
@@ -66,6 +72,9 @@ void SceneMuiltGame::Enter()
 	AddGameObject(textScore1);
 	AddGameObject(textScore2);
 	AddGameObject(textCenter);
+	AddGameObject(palyer1Info);
+	AddGameObject(palyer2Info);
+	AddGameObject(timer);
 	
 
 	Scene::Enter();
@@ -102,6 +111,14 @@ void SceneMuiltGame::Enter()
 	branch2->SetPosition(tree2->GetPosition());
 	branch2->SetScale({ 0.5f , 1.f });
 
+	palyer1Info->SetString("Player1");
+	palyer1Info->SetOrigin(Origins::MC);
+	palyer1Info->SetPosition({ backGround1->GetPosition().x + backGround1->GetSprite().getLocalBounds().width * backGround1->GetScale().x / 2 , windowSize.height - 150.f });
+
+	palyer2Info->SetString("Player2");
+	palyer2Info->SetOrigin(Origins::MC);
+	palyer2Info->SetPosition({ backGround2->GetPosition().x + backGround2->GetSprite().getLocalBounds().width * backGround2->GetScale().x / 2 , windowSize.height - 150.f });
+
 	textScore1->SetCharacterSize(30);
 	textScore1->SetPosition({ 20, 20 });
 
@@ -111,6 +128,8 @@ void SceneMuiltGame::Enter()
 	textCenter->SetPosition({ windowSize.width / 2 , windowSize.height / 2 });
 	textCenter->SetOrigin(Origins::MC);
 	textCenter->SetCharacterSize(100);
+
+	timer->SetPosition({windowSize.width / 2 - timer->GetSize().x / 2 , windowSize.height - 150.f});
 }
 
 void SceneMuiltGame::Exit()
@@ -128,10 +147,23 @@ void SceneMuiltGame::Update(float dt)
 			player1->Die();
 			textCenter->SetString("Player 2 Win");
 		}
-		if (branch2->GetSide() == player2->GetSide()) {
+		else if (branch2->GetSide() == player2->GetSide()) {
 			isPlaying = false;
 			player2->Die();
 			textCenter->SetString("Player 1 Win");
+		}
+
+		if (timer->GetTime() <= 0) {
+			isPlaying = false;
+			if (textScore1->GetScore() > textScore2->GetScore()) {
+				textCenter->SetString("Player 1 Win");
+			}
+			else if (textScore1->GetScore() < textScore2->GetScore()) {
+				textCenter->SetString("Player 2 Win");
+			}
+			else {
+				textCenter->SetString("DRAW");
+			}
 		}
 	}
 	else {
@@ -144,6 +176,7 @@ void SceneMuiltGame::Update(float dt)
 			textScore1->Reset();
 			textScore2->Reset();
 			textCenter->Reset();
+			timer->Reset();
 		}
 	}
 }

@@ -21,8 +21,6 @@ protected:
 
 public:
 	Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id = "", sf::Vector2f windowRange = { 0,(float)FRAMEWORK.GetWindowSize().x }, const std::string& name = "");
-	Log(sf::Vector2f windowRange); //Ω¬ø¨
-
 	~Log() override = default;
 	
 	// GameObject¿ª(∏¶) ≈Î«ÿ ªÛº”µ 

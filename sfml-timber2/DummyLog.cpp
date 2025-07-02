@@ -7,44 +7,45 @@ DummyLog::DummyLog(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::st
 {
 
 }
-DummyLog::DummyLog(sf::Vector2f dummyRange)
-	:Log(dummyRange)
-{
-
-}
 
 void DummyLog::Init()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 5; i++)//@
 	{
-		position[i] = spriteLog[i].getPosition();
-		dummyLog[i].setTexture(TEXTURE_MGR.Get(logIds));
-	}
-	DummyLog DummyLog({(float)FRAMEWORK.GetWindowSize().x, 200.f});
-	//AddGameObject(log);
-	//Scene::Enter();
-	//log->SetPosition({ tree->GetPosition().x , (float)TEXTURE_MGR.Get("graphics/tree.png").getSize().y });
-	//log->SetOrigin(Origins::BC);
+		//position[i] = spriteLog[i].getPosition();
+		//dummyLog[i].setTexture(TEXTURE_MGR.Get(logIds));
+	}	
 }
+
 void DummyLog::Release()
 {
 	
 }
+
 void DummyLog::Reset()
 {
 
 }
+
 void DummyLog::Update(float dt)
 {
-
+	for (int i = 0; i < 5; i++)
+	{
+		//sf::Vector2f pos = dummyLog[i].getPosition();
+	}
 }
+
 void DummyLog::Draw(sf::RenderWindow& window)
 {
 
 }
-void DummyLog::SetPosition(sf::Vector2f& pos)
+void DummyLog::SetPosition(const sf::Vector2f& pos)
 {
-	
+	for (int i = 0; i < 5; i++)
+	{
+		//position[i] = pos;
+		//dummyLog[i].setPosition(position[i]);
+	}
 }
 
 void DummyLog::SetOrigin(Origins preset)
@@ -64,3 +65,10 @@ void DummyLog::SetDummyRange(sf::Vector2f dummyRange)
 
 }
 
+//log->SetPosition({ tree1->GetPosition().x , tree1->GetSprite().getLocalBounds().height});
+
+//sf::Vector2f pos = spriteLog[i].getPosition();
+//velocity[i] += gravity * dt;
+//pos += velocity[i] * dt;
+//spriteLog[i].setPosition(pos);
+//CheckOutOfWindow(i);

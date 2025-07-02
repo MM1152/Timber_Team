@@ -13,13 +13,6 @@ Log::Log(sf::Keyboard::Key key1, sf::Keyboard::Key key2, const std::string& id, 
 	
 }
 
-//½Â¿¬
-Log::Log(sf::Vector2f windowRange)
-	:windowRange(windowRange)
-{
-
-}
-
 void Log::Init()
 {
 

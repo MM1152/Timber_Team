@@ -2,13 +2,13 @@
 #include "SoundGo.h"
 
 SoundGo::SoundGo()
+	:soundMute(true), currentMuteCheck(false)
 {
 }
 
 SoundGo::~SoundGo()
 {
 }
-
 
 void SoundGo::Init()
 {
@@ -27,29 +27,26 @@ void SoundGo::Init()
 
 void SoundGo::Play(std::string id)
 {
-	if (id == "Chop")
+	if (id == "Chop" && soundMute)
 	{
 		soundChop.play();
 	}
-	if (id == "wave")
-	{
-		soundWave.play();
-	}
-	if (id == "spark")
-	{
-		soundSpark.play();
-	}
-	if (id == "Death")
+	if (id == "Death" && soundMute)
 	{
 		soundDeath.play();
 	}
-	if (id == "OutOfTime")
+	if (id == "OutOfTime" && soundMute)
 	{
 		soundOutOfTime.play();
 	}
 }
 
+void SoundGo::MuteSet(bool mute)
+{
+	soundMute = mute;
+}
 
-
-
-
+bool SoundGo::MuteGet()
+{
+	return soundMute;
+}

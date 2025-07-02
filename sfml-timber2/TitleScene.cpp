@@ -4,36 +4,45 @@
 #include "SpriteGo.h"
 
 TitleScene::TitleScene()
-	:Scene(SceneIds::Title), CharacterModeCheck(false), PlayModeCheck(false)
+	:Scene(SceneIds::Title), ExitCheck(false), PlayModeCheck(false)
 {
 }
 
 void TitleScene::Init()
 {
 	fontIds.push_back("fonts/KOMIKAP_.ttf");
-	texIds.push_back("graphics/background.png");
+	texIds.push_back("graphics/title.png");
 
 	//배경이미지 띄우기
-	SpriteGo* background = new SpriteGo("graphics/background.png");
+	SpriteGo* background = new SpriteGo("graphics/title.png");
 	AddGameObject(background);
 
 	//game start 텍스트 띄우기
 	TextGo* GameStart = new TextGo("fonts/KOMIKAP_.ttf");
 	GameStart->SetString("GAME START");
 	GameStart->SetCharacterSize(150);
-	GameStart->SetFillColor(sf::Color::White);
+	GameStart->SetFillColor(sf::Color::Black);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
-	GameStart->SetPosition({ windowBounds.width * 0.5f - 430, windowBounds.height * 0.5f - 250 });////////////
+	GameStart->SetPosition({ windowBounds.width * 0.5f - 130, windowBounds.height - 850 });////////////
 	AddGameObject(GameStart);
+
+	//Exit
+	Exit = new TextGo("fonts/KOMIKAP_.ttf");
+	Exit->SetString("Exit");
+	Exit->SetCharacterSize(100);
+	Exit->SetFillColor(sf::Color::Black);
+
+	Exit->SetPosition({ windowBounds.width * 0.5f - 130, windowBounds.height - 280 });////////////오리진 값 설정 추가
+	AddGameObject(Exit);
 
 	//select Mode
 	SelectMode = new TextGo("fonts/KOMIKAP_.ttf");
-	SelectMode->SetString("SELECT \n MODE");
+	SelectMode->SetString("SELECT MODE");
 	SelectMode->SetCharacterSize(100);
-	SelectMode->SetFillColor(sf::Color::White);
+	SelectMode->SetFillColor(sf::Color::Black);
 
-	SelectMode->SetPosition({ windowBounds.width - 760, windowBounds.height - 480 });////////////오리진 값 설정 추가
+	SelectMode->SetPosition({ windowBounds.width * 0.5f - 130, windowBounds.height - 480 });////////////오리진 값 설정 추가
 	AddGameObject(SelectMode);
 
 	////select Character
@@ -52,14 +61,32 @@ void TitleScene::Update(float dt)
 {
 	Scene::Update(dt);
 
-	if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
+	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
 	{
 		SelectMode->SetFillColor(sf::Color::Red);
 		SelectMode->SetCharacterSize(90);
+		Exit->SetFillColor(sf::Color::Black);
+		Exit->SetCharacterSize(100);
 		PlayModeCheck=true;	
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && PlayModeCheck)
 	{
 		SCENE_MGR.ChangeScene(SceneIds::Mode);
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+	{
+		SelectMode->SetFillColor(sf::Color::Black);
+		SelectMode->SetCharacterSize(100);
+		Exit->SetFillColor(sf::Color::Red);
+		Exit->SetCharacterSize(90);
+		ExitCheck = true;
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && PlayModeCheck)
+	{
+		SCENE_MGR.ChangeScene(SceneIds::Mode);
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && ExitCheck)
+	{
+		//게임종료
 	}
 }

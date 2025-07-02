@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "UiHud.h"
 
+
 SceneGame::SceneGame()
     : Scene(SceneIds::Game)
 {
@@ -29,7 +30,6 @@ void SceneGame::Init()
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
-    //
 
     AddGameObject(new SpriteGo("graphics/background.png"));
 

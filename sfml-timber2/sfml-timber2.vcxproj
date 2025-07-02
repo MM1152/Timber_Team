@@ -21,15 +21,25 @@
   <ItemGroup>
     <ClInclude Include="BackgroundElement.h" />
     <ClInclude Include="Branch.h" />
+    <ClInclude Include="CharacterScene.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputMgr.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="ModeScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMuliti.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneCharacterChoice.h" />
+    <ClInclude Include="SceneCharacterChoice2p.h" />
+    <ClInclude Include="SceneDev1.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneDev2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SceneMuiltGame.h" />
@@ -39,6 +49,7 @@
     <ClInclude Include="TextGo.h" />
     <ClInclude Include="TextScore.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UiHud.h" />
     <ClInclude Include="Utils.h" />
@@ -46,14 +57,24 @@
   <ItemGroup>
     <ClCompile Include="BackgroundElement.cpp" />
     <ClCompile Include="Branch.cpp" />
+    <ClCompile Include="CharacterScene.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputMgr.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ModeScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMuliti.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneCharacterChoice.cpp" />
+    <ClCompile Include="SceneCharacterChoice2p.cpp" />
+    <ClCompile Include="SceneDev1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneDev2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SceneMuiltGame.cpp" />
@@ -64,6 +85,7 @@
     <ClCompile Include="TextGo.cpp" />
     <ClCompile Include="TextScore.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UiHud.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -160,6 +182,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>

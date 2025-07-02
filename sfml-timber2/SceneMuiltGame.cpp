@@ -9,7 +9,7 @@
 #include "Timer.h"
 
 SceneMuiltGame::SceneMuiltGame()
-	:Scene(SceneIds::Dev1)
+	:Scene(SceneIds::Title)
 	,isPlaying(true)
 {
 }

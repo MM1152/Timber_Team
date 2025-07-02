@@ -23,6 +23,8 @@
 #include "Scene.h"
 #include "SceneMgr.h"
 #include "Framework.h"
+#include "SpriteGo.h"
+#include "TextGo.h"
 
 
 

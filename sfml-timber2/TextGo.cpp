@@ -74,7 +74,6 @@ void TextGo::Reset()
 {
 	text.setFont(FONT_MGR.Get(fontId));
 	Utils::SetOrigin(text, originPreset);
-	text.setString("");
 }
 
 void TextGo::Update(float dt)

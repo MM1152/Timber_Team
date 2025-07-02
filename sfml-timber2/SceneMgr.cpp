@@ -2,9 +2,20 @@
 #include "SceneMgr.h"
 #include "SceneGame.h"
 #include "SceneMuiltGame.h"
+#include "TitleScene.h"
+#include "ModeScene.h"
+#include "CharacterScene.h"
+#include "SceneCharacterChoice.h"
+#include "SceneCharacterChoice2p.h"
+
 void SceneMgr::Init()
 {
+	scenes.push_back(new TitleScene());
+	scenes.push_back(new ModeScene());
+	scenes.push_back(new CharacterScene());
 	scenes.push_back(new SceneGame());
+	scenes.push_back(new SceneCharacterChoice());
+	scenes.push_back(new SceneCharacterChoice2p());
 	scenes.push_back(new SceneMuiltGame());
 
 	//startScene = SceneIds::Dev1;

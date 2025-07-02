@@ -5,6 +5,8 @@
 #define FONT "fonts/KOMIKAP_.ttf"
 class PlayerMuliti;
 class Branch;
+class TextScore	;
+class TextGo;
 
 class SceneMuiltGame : public Scene
 {
@@ -15,6 +17,10 @@ protected:
 	Branch* branch1;
 	Branch* branch2;
 
+	TextScore* textScore1;
+	TextScore* textScore2;
+
+	TextGo* textCenter;
 	bool isPlaying;
 public:
 	SceneMuiltGame();

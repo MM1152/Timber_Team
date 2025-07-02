@@ -8,9 +8,12 @@ protected:
 	sf::Keyboard::Key key2;
 
 	sf::Sprite sprite;
+	sf::Sprite axeSprite;
 
 	std::string texId;
 	std::string ripId;
+	std::string axeId;
+
 	Sides side;
 
 	bool isDie;

@@ -21,6 +21,7 @@ PlayerMuliti::PlayerMuliti(const std::string& name, sf::Keyboard::Key key1, sf::
 {
 	texId = "graphics/player.png";
 	ripId = "graphics/rip.png";
+	axeId = "graphics/axe.png";
 }
 
 PlayerMuliti::~PlayerMuliti()
@@ -30,6 +31,7 @@ PlayerMuliti::~PlayerMuliti()
 void PlayerMuliti::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
+	axeSprite.setPosition(position);
 	sprite.setPosition(position);
 }
 
@@ -42,12 +44,14 @@ void PlayerMuliti::SetRotation(float rot)
 void PlayerMuliti::SetOrigin(const sf::Vector2f& o)
 {
 	origin = o;
+	axeSprite.setOrigin({ origin.x + 120.f, origin.y  - 110.f});
 	sprite.setOrigin(origin);
 }
 
 void PlayerMuliti::SetOrigin(Origins preset)
 {
 	originPreset = preset;
+	
 	if (originPreset != Origins::Custom) {
 		Utils::SetOrigin(sprite, originPreset);
 	}
@@ -56,6 +60,7 @@ void PlayerMuliti::SetOrigin(Origins preset)
 void PlayerMuliti::SetScale(const sf::Vector2f& s)
 {
 	scale = s;
+	axeSprite.setScale(scale);
 	sprite.setScale(scale);
 }
 
@@ -71,6 +76,7 @@ void PlayerMuliti::Release()
 void PlayerMuliti::Reset()
 {
 	sprite.setTexture(TEXTURE_MGR.Get(texId));
+	axeSprite.setTexture(TEXTURE_MGR.Get(axeId));
 }
 
 void PlayerMuliti::Update(float dt)
@@ -88,6 +94,9 @@ void PlayerMuliti::Draw(sf::RenderWindow& window)
 {
 	if (active) {
 		window.draw(sprite);
+		if (InputMgr::GetKey(key1) || InputMgr::GetKey(key2)) {
+			window.draw(axeSprite);
+		}
 	}
 }
 

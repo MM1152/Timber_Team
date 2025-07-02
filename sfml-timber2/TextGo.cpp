@@ -14,6 +14,7 @@ void TextGo::SetString(const std::string& str)
 
 void TextGo::SetCharacterSize(unsigned int size)
 {
+	text.setCharacterSize(size);
 	Utils::SetOrigin(text, originPreset);
 }
 
@@ -73,6 +74,7 @@ void TextGo::Reset()
 {
 	text.setFont(FONT_MGR.Get(fontId));
 	Utils::SetOrigin(text, originPreset);
+	text.setString("");
 }
 
 void TextGo::Update(float dt)

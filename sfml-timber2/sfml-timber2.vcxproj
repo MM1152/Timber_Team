@@ -25,6 +25,7 @@
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputMgr.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMuliti.h" />
     <ClInclude Include="ResourceMgr.h" />
@@ -47,6 +48,7 @@
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputMgr.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMuliti.cpp" />

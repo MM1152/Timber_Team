@@ -41,6 +41,7 @@ void SceneMuiltGame::Release()
 
 void SceneMuiltGame::Enter()
 {
+
 	SpriteGo* backGround1 = new SpriteGo(IMG"background.png");
 	SpriteGo* backGround2 = new SpriteGo(IMG"background.png");
 	SpriteGo* tree1 = new SpriteGo(IMG"tree.png");

@@ -63,6 +63,7 @@ void SceneGame::Init()
 
 void SceneGame::Enter()
 {
+    isPlaying = false;
     Log* log = new Log(sf::Keyboard::Left , sf::Keyboard::Right , "graphics/log.png");
 
     AddGameObject(log);
@@ -93,10 +94,11 @@ void SceneGame::Exit()
 
 void SceneGame::Update(float dt)
 {
-    Scene::Update(dt);
+  
 
     if (isPlaying)
     {
+        Scene::Update(dt);
         if (InputMgr::GetKeyDown(sf::Keyboard::Left))
         {
             tree->UpdateBranches();

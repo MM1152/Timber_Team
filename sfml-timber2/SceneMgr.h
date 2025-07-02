@@ -11,12 +11,10 @@ protected:
 
 	std::vector<Scene*> scenes;
 
-
-	SceneIds startScene = SceneIds::SceneMuiltGame;
+	SceneIds startScene = SceneIds::Title;
 	SceneIds currentScene = SceneIds::None;
 	SceneIds nextScene = SceneIds::None;
 	std::stack<SceneIds> beforeScenes;
-
 
 	std::string characterChoose;
 	std::string characterChoose2p;

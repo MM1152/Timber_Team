@@ -2,7 +2,7 @@
 #include "ModeScene.h"
 
 ModeScene::ModeScene()
-	:Scene(SceneIds::Mode), playModeCheck(false)
+	:Scene(SceneIds::Mode), playMode1pCheck(false), playMode2pCheck(false)
 {
 }
 
@@ -50,12 +50,12 @@ void ModeScene::Update(float dt)
 		Text1P->SetCharacterSize(320);
 		Text2P->SetFillColor(sf::Color::White);
 		Text2P->SetCharacterSize(360);
-		playModeCheck = true;
+		playMode1pCheck = true;
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && playModeCheck)
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode1pCheck)
 	{
-		SCENE_MGR.ChangeScene(SceneIds::Character);
-		playModeCheck = false;
+		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
+		playMode1pCheck = false;
 	}
 
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
@@ -64,16 +64,17 @@ void ModeScene::Update(float dt)
 		Text1P->SetCharacterSize(360);
 		Text2P->SetFillColor(sf::Color::Red);
 		Text2P->SetCharacterSize(320);
-		playModeCheck = true;
+		playMode2pCheck = true;
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Space))
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode2pCheck)
 	{
-		SCENE_MGR.ChangeScene(SceneIds::Character);
-		playModeCheck = false;
+		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice2p);
+		playMode2pCheck = false;
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
 	{
 		SCENE_MGR.ChangeScene(SceneIds::Title);
-		playModeCheck = false;
+		playMode1pCheck = false;
+		playMode2pCheck = false;
 	}
 }

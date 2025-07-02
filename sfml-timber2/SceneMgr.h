@@ -9,9 +9,12 @@ protected:
 
 	std::vector<Scene*> scenes;
 
-	SceneIds startScene = SceneIds::Title;//////////½Â¿¬
+	SceneIds startScene = SceneIds::CharacterChoice2p;
 	SceneIds currentScene = SceneIds::None;
 	SceneIds nextScene = SceneIds::None;
+
+	std::string characterChoose;
+	std::string characterChoose2p;
 
 public:
 	void Init();

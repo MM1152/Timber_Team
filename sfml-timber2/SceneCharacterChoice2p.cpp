@@ -28,59 +28,111 @@ void SceneCharacterChoice2p::Init()
     back2->SetScale({ 0.49f , 1.f });
     back2->SetPosition({ 980 , 0.f });
 
-    SpriteGo* char1 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/player.png"));
-    char1->SetOrigin(Origins::MC);
-    char1->SetPosition({ 400.f, 500.f });
+    SpriteGo* char1BeardMan = (SpriteGo*)AddGameObject(new SpriteGo("graphics/player.png"));
+    char1BeardMan->SetOrigin(Origins::MC);
+    char1BeardMan->SetPosition({ 140.f, 600.f });
 
-    SpriteGo* char2 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
-    char2->SetOrigin(Origins::MC);
-    char2->SetScale({ 0.5f , 0.5f });
-    char2->SetPosition({ 950.f, 500.f });
+    SpriteGo* char2BeardMan = (SpriteGo*)AddGameObject(new SpriteGo("graphics/player.png"));
+    char2BeardMan->SetOrigin(Origins::MC);
+    char2BeardMan->SetPosition({ 1120.f, 600.f });
 
-    SpriteGo* char3 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
-    char3->SetOrigin(Origins::MC);
-    char3->SetScale({ 0.25f , 0.25f });
-    char3->SetPosition({ 1600.f, 500.f });
+    SpriteGo* char1Pikachu = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
+    char1Pikachu->SetOrigin(Origins::MC);
+    char1Pikachu->SetScale({ 0.5f , 0.5f });
+    char1Pikachu->SetPosition({ 470.f, 600.f });
 
-    characters.push_back(char1);
-    characters.push_back(char2);
-    characters.push_back(char3);
+    SpriteGo* char2Pikachu = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
+    char2Pikachu->SetOrigin(Origins::MC);
+    char2Pikachu->SetScale({ 0.5f , 0.5f });
+    char2Pikachu->SetPosition({ 1430.f, 600.f });
+
+    SpriteGo* char1Squirtle = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
+    char1Squirtle->SetOrigin(Origins::MC);
+    char1Squirtle->SetScale({ 0.25f , 0.25f });
+    char1Squirtle->SetPosition({ 800.f, 600.f });
+
+    SpriteGo* char2Squirtle = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
+    char2Squirtle->SetOrigin(Origins::MC);
+    char2Squirtle->SetScale({ 0.25f , 0.25f });
+    char2Squirtle->SetPosition({ 1760.f, 600.f });
+
+    characters.push_back(char1BeardMan);
+    characters.push_back(char1Pikachu);
+    characters.push_back(char1Squirtle);
+
+    characters2p.push_back(char2BeardMan);
+    characters2p.push_back(char2Pikachu);
+    characters2p.push_back(char2Squirtle);
 
     TextGo* title = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    title->SetString("Choose Character");
+    title->SetString("Choose Character\n     1 Player");
     title->SetCharacterSize(50);
     title->SetFillColor(sf::Color::White);
-    title->SetPosition({ 950.f, 100.f });
+    title->SetPosition({ 470.f, 100.f });
     title->SetOrigin(Origins::MC);
 
-    TextGo* name1 = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    name1->SetString("beard man");
-    name1->SetCharacterSize(50);
-    name1->SetFillColor(sf::Color::White);
-    name1->SetPosition({ 400.f, 650.f });
-    name1->SetOrigin(Origins::MC);
+    TextGo* title2 = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    title2->SetString("Choose Character\n     2 Player");
+    title2->SetCharacterSize(50);
+    title2->SetFillColor(sf::Color::White);
+    title2->SetPosition({ 1430.f, 100.f });
+    title2->SetOrigin(Origins::MC);
 
-    TextGo* name2 = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    name2->SetString("pikachu");
-    name2->SetCharacterSize(50);
-    name2->SetFillColor(sf::Color::White);
-    name2->SetPosition({ 950.f, 650.f });
-    name2->SetOrigin(Origins::MC);
+    TextGo* name1Beardman = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name1Beardman->SetString("beard man");
+    name1Beardman->SetCharacterSize(50);
+    name1Beardman->SetFillColor(sf::Color::White);
+    name1Beardman->SetPosition({ 140.f, 750.f });
+    name1Beardman->SetOrigin(Origins::MC);
 
-    TextGo* name3 = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    name3->SetString("Squirtle");
-    name3->SetCharacterSize(50);
-    name3->SetFillColor(sf::Color::White);
-    name3->SetPosition({ 1550.f, 650.f });
-    name3->SetOrigin(Origins::MC);
+    TextGo* name2Beardman = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name2Beardman->SetString("beard man");
+    name2Beardman->SetCharacterSize(50);
+    name2Beardman->SetFillColor(sf::Color::White);
+    name2Beardman->SetPosition({ 1120.f, 750.f });
+    name2Beardman->SetOrigin(Origins::MC);
 
-    characterNames.push_back(name1);
-    characterNames.push_back(name2);
-    characterNames.push_back(name3);
+
+    TextGo* name1Pikachu = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name1Pikachu->SetString("pikachu");
+    name1Pikachu->SetCharacterSize(50);
+    name1Pikachu->SetFillColor(sf::Color::White);
+    name1Pikachu->SetPosition({ 470.f, 750.f });
+    name1Pikachu->SetOrigin(Origins::MC);
+
+    TextGo* name2Pikachu = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name2Pikachu->SetString("pikachu");
+    name2Pikachu->SetCharacterSize(50);
+    name2Pikachu->SetFillColor(sf::Color::White);
+    name2Pikachu->SetPosition({ 1430.f, 750.f });
+    name2Pikachu->SetOrigin(Origins::MC);
+
+    TextGo* name1Sqirtle = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name1Sqirtle->SetString("Squirtle");
+    name1Sqirtle->SetCharacterSize(50);
+    name1Sqirtle->SetFillColor(sf::Color::White);
+    name1Sqirtle->SetPosition({ 800.f, 750.f });
+    name1Sqirtle->SetOrigin(Origins::MC);
+
+    TextGo* name2Sqirtle = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    name2Sqirtle->SetString("Squirtle");
+    name2Sqirtle->SetCharacterSize(50);
+    name2Sqirtle->SetFillColor(sf::Color::White);
+    name2Sqirtle->SetPosition({ 1760.f, 750.f });
+    name2Sqirtle->SetOrigin(Origins::MC);
+
+    characterNames.push_back(name1Beardman);
+    characterNames.push_back(name1Pikachu);
+    characterNames.push_back(name1Sqirtle);
+
+    characterNames2p.push_back(name2Beardman);
+    characterNames2p.push_back(name2Pikachu);
+    characterNames2p.push_back(name2Sqirtle);
 
     choiceCharacter = 0;
+    choiceCharacter2p = 0;
     isChoice = false;
-
+    isChoice2p = false;
 
     Scene::Init();
 
@@ -95,13 +147,32 @@ void SceneCharacterChoice2p::Exit()
 }
 void SceneCharacterChoice2p::Update(float dt)
 {
-    if (isChoice)
+
+    if (isChoice2p)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //나중에 1P Scene 이름으로 교체
+        TextGo* Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+        Ready2p->SetString("Ready");
+        Ready2p->SetCharacterSize(50);
+        Ready2p->SetFillColor(sf::Color::Yellow);
+        Ready2p->SetPosition({ 470.f, 200.f });
+        Ready2p->SetOrigin(Origins::MC);
+    }
+
+    if (isChoice2p && isChoice)
+    {
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //나중에 2P Scene 이름으로 교체
         return;
     }
 
     if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+    {
+        choiceCharacter2p--;
+        if (choiceCharacter2p < 0)
+        {
+            choiceCharacter2p = (int)characters.size() - 1;
+        }
+    }
+    if (InputMgr::GetKeyDown(sf::Keyboard::A))
     {
         choiceCharacter--;
         if (choiceCharacter < 0)
@@ -110,6 +181,15 @@ void SceneCharacterChoice2p::Update(float dt)
         }
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+    {
+        choiceCharacter2p++;
+        if (choiceCharacter2p >= (int)characters2p.size())
+        {
+            choiceCharacter2p = 0;
+        }
+
+    }
+    if (InputMgr::GetKeyDown(sf::Keyboard::D))
     {
         choiceCharacter++;
         if (choiceCharacter >= (int)characters.size())
@@ -120,9 +200,24 @@ void SceneCharacterChoice2p::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        isChoice2p = true;
+    }
+    if (InputMgr::GetKeyDown(sf::Keyboard::Space))
+    {
         isChoice = true;
     }
 
+    for (int i = 0; i < characterNames2p.size(); ++i)
+    {
+        if (i == choiceCharacter2p)
+        {
+            characterNames2p[i]->SetFillColor(sf::Color::Yellow);
+        }
+        else
+        {
+            characterNames2p[i]->SetFillColor(sf::Color::Black);
+        }
+    }
     for (int i = 0; i < characterNames.size(); ++i)
     {
         if (i == choiceCharacter)
@@ -131,7 +226,7 @@ void SceneCharacterChoice2p::Update(float dt)
         }
         else
         {
-            characterNames[i]->SetFillColor(sf::Color::White);
+            characterNames[i]->SetFillColor(sf::Color::Black);
         }
     }
 

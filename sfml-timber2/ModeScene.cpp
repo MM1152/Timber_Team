@@ -2,7 +2,7 @@
 #include "ModeScene.h"
 
 ModeScene::ModeScene()
-	:Scene(SceneIds::Mode)
+	:Scene(SceneIds::Mode), playModeCheck(false)
 {
 }
 
@@ -44,12 +44,27 @@ void ModeScene::Update(float dt)
 {
 	Scene::Update(dt);
 
-	if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
+	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
 	{
-		
+		Text1P->SetFillColor(sf::Color::Red);
+		Text1P->SetCharacterSize(320);
+		playModeCheck = true;
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && playModeCheck)
+	{
+		SCENE_MGR.ChangeScene(SceneIds::Character);
+		playModeCheck = false;
+	}
+
+	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+	{
+		Text2P->SetFillColor(sf::Color::Red);
+		Text2P->SetCharacterSize(320);
+		playModeCheck = true;
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Space))
 	{
 		SCENE_MGR.ChangeScene(SceneIds::Character);
+		playModeCheck = false;
 	}
 }

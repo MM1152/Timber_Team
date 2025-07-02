@@ -7,7 +7,7 @@ class ModeScene :
 protected:
     TextGo* Text1P;
     TextGo* Text2P;
-
+    bool playModeCheck;
 
 
 public:

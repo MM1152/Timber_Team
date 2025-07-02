@@ -48,6 +48,8 @@ void ModeScene::Update(float dt)
 	{
 		Text1P->SetFillColor(sf::Color::Red);
 		Text1P->SetCharacterSize(320);
+		Text2P->SetFillColor(sf::Color::White);
+		Text2P->SetCharacterSize(360);
 		playModeCheck = true;
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && playModeCheck)
@@ -58,6 +60,8 @@ void ModeScene::Update(float dt)
 
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
 	{
+		Text1P->SetFillColor(sf::Color::White);
+		Text1P->SetCharacterSize(360);
 		Text2P->SetFillColor(sf::Color::Red);
 		Text2P->SetCharacterSize(320);
 		playModeCheck = true;

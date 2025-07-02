@@ -25,6 +25,8 @@ void SceneMuiltGame::Init()
 	texIds.push_back(IMG"log.png");
 	texIds.push_back(IMG"pikachu.png");
 	texIds.push_back(IMG"turtle.png");
+	texIds.push_back(IMG"water.png");
+	texIds.push_back(IMG"electric.png");
 	fontIds.push_back(FONT);
 	Scene::Init();
 }

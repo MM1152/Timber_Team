@@ -9,10 +9,16 @@ protected:
 
 	sf::Sprite sprite;
 	sf::Sprite axeSprite;
+	sf::Sprite elecSprite;
+	sf::Sprite waterSprite;
+
 
 	std::string texId;
 	std::string ripId;
 	std::string axeId;
+	std::string waterId;
+	std::string elecId;
+
 
 	Sides side;
 

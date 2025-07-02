@@ -75,7 +75,6 @@ void SceneMuiltGame::Enter()
 	AddGameObject(palyer1Info);
 	AddGameObject(palyer2Info);
 	AddGameObject(timer);
-	
 
 	Scene::Enter();
 
@@ -145,6 +144,7 @@ void SceneMuiltGame::Update(float dt)
 		if (branch1->GetSide() == player1->GetSide()) {
 			isPlaying = false;
 			player1->Die();
+		
 			textCenter->SetString("Player 2 Win");
 		}
 		else if (branch2->GetSide() == player2->GetSide()) {
@@ -164,6 +164,7 @@ void SceneMuiltGame::Update(float dt)
 			else {
 				textCenter->SetString("DRAW");
 			}
+			SOUND_MGR.Play("OutOfTIme");
 		}
 	}
 	else {

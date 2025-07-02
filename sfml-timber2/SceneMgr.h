@@ -10,7 +10,7 @@ protected:
 	std::vector<Scene*> scenes;
 
 
-	SceneIds startScene = SceneIds::CharacterChoice2p;
+	SceneIds startScene = SceneIds::SceneMuiltGame;
 	SceneIds currentScene = SceneIds::None;
 	SceneIds nextScene = SceneIds::None;
 

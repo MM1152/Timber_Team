@@ -23,7 +23,7 @@ void SoundGo::Init()
 
 void SoundGo::Play(std::string id)
 {
-	if (id == "chop")
+	if (id == "Chop")
 	{
 		soundChop.play();
 	}

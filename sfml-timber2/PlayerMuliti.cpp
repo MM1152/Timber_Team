@@ -83,9 +83,11 @@ void PlayerMuliti::Update(float dt)
 {
 	if (InputMgr::GetKeyDown(key1)) {
 		SetSide(Sides::Left);
+		SOUND_MGR.Play("Chop");
 	}
 	if (InputMgr::GetKeyDown(key2)) {
 		SetSide(Sides::Right);
+		SOUND_MGR.Play("Chop");
 	}
 
 }
@@ -114,4 +116,5 @@ void PlayerMuliti::Die()
 {
 	isDie = true;
 	sprite.setTexture(TEXTURE_MGR.Get(ripId));
+	SOUND_MGR.Play("Death");
 }

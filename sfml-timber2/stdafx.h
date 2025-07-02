@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <math.h>
-
+#include <stack>
 
 // SFML
 #include <SFML/Graphics.hpp>
@@ -28,6 +28,7 @@
 #include "SoundGo.h"
 #include "SpriteGo.h"
 #include "TextGo.h"
+
 
 
 

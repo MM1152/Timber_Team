@@ -1,4 +1,6 @@
 #pragma once
+#include "stdafx.h"
+
 class SceneMgr : public Singleton<SceneMgr>
 {
 	friend class Singleton<SceneMgr>;
@@ -13,7 +15,8 @@ protected:
 	SceneIds startScene = SceneIds::Title;
 	SceneIds currentScene = SceneIds::None;
 	SceneIds nextScene = SceneIds::None;
-	SceneIds beforeScene = SceneIds::None;
+	std::stack<SceneIds> beforeScenes;
+
 
 	std::string characterChoose;
 	std::string characterChoose2p;

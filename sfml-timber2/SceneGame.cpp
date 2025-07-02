@@ -6,6 +6,7 @@
 #include "Tree.h"
 #include "Player.h"
 #include "UiHud.h"
+#include "Log.h"
 
 
 SceneGame::SceneGame()
@@ -29,6 +30,7 @@ void SceneGame::Init()
     texIds.push_back("graphics/turtle.png");
     texIds.push_back("graphics/axe.png");
     texIds.push_back("graphics/rip.png");
+    texIds.push_back("graphics/log.png");
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
@@ -61,6 +63,9 @@ void SceneGame::Init()
 
 void SceneGame::Enter()
 {
+    Log* log = new Log(sf::Keyboard::Left , sf::Keyboard::Right , "graphics/log.png");
+
+    AddGameObject(log);
     Scene::Enter();
 
     sf::Vector2f pos = tree->GetPosition();
@@ -75,6 +80,10 @@ void SceneGame::Enter()
 
     uiHud->SetShowMassage(true);
     uiHud->SetMessage("Enter to Start!");
+
+    log->SetPosition({ tree->GetPosition().x , (float)TEXTURE_MGR.Get("graphics/tree.png").getSize().y });
+    log->SetOrigin(Origins::BC);
+    
 }
 
 void SceneGame::Exit()

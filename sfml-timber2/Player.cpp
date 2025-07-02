@@ -42,9 +42,21 @@ void Player::SetPosition(const sf::Vector2f& pos)
 
 void Player::Init()
 {
+	int choice = SCENE_MGR.GetChoiceCharacter();
+	std::cout << SCENE_MGR.GetChoiceCharacter() << std::endl;
+	switch (choice)
+	{
+	case 0:
+		texPlayerId = "graphics/player.png";
 
-	
-	texPlayerId = "graphics/player.png";
+	case 1:
+		texPlayerId = "graphics/pikachu.png";
+
+	case 2:
+		texPlayerId = "graphics/turtle.png";
+	}
+
+
 	axeTexId = "graphics/axe.png";
 	ripTexId = "graphics/rip.png";
 
@@ -66,6 +78,19 @@ void Player::Release()
 
 void Player::Reset()
 {
+	int choice = SCENE_MGR.GetChoiceCharacter();
+	switch (choice)
+	{
+	case 0:
+		texPlayerId = "graphics/player.png";
+		break;
+	case 1:
+		texPlayerId = "graphics/pikachu.png";
+		break;
+	case 2:
+		texPlayerId = "graphics/turtle.png";
+		break;
+	}
 	sprite.setTexture(TEXTURE_MGR.Get(texPlayerId));
 	Utils::SetOrigin(sprite, Origins::BC);
 

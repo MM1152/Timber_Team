@@ -71,9 +71,4 @@ void ModeScene::Update(float dt)
 		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
 		playModeCheck = false;
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
-	{
-		SCENE_MGR.ChangeScene(SceneIds::Title);
-		playModeCheck = false;
-	}
 }

@@ -43,6 +43,7 @@ void SceneMgr::Release()
 
 void SceneMgr::ChangeScene(SceneIds id)
 {
+	beforeScene = currentScene;
 	nextScene = id;
 }
 
@@ -54,6 +55,11 @@ void SceneMgr::Update(float dt)
 		currentScene = nextScene;
 		nextScene = SceneIds::None;
 		scenes[(int)currentScene]->Enter();
+	}
+
+	if (InputMgr::GetKeyDown(sf::Keyboard::Escape) && beforeScene != SceneIds::None) {
+		nextScene = beforeScene;
+		beforeScene = SceneIds::None;
 	}
 
 	scenes[(int)currentScene]->Update(dt);

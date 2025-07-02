@@ -20,13 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundElement.h" />
+    <ClInclude Include="Branch.h" />
     <ClInclude Include="CharacterScene.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputMgr.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="ModeScene.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerMuliti.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneCharacterChoice.h" />
@@ -39,10 +42,13 @@
     </ClInclude>
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="SceneMuiltGame.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SpriteGo.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextGo.h" />
+    <ClInclude Include="TextScore.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UiHud.h" />
@@ -50,13 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackgroundElement.cpp" />
+    <ClCompile Include="Branch.cpp" />
     <ClCompile Include="CharacterScene.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputMgr.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModeScene.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerMuliti.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneCharacterChoice.cpp" />
     <ClCompile Include="SceneCharacterChoice2p.cpp" />
@@ -68,11 +77,14 @@
     </ClCompile>
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="SceneMuiltGame.cpp" />
     <ClCompile Include="SpriteGo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TextGo.cpp" />
+    <ClCompile Include="TextScore.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UiHud.cpp" />
@@ -170,8 +182,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

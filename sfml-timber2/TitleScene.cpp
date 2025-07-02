@@ -24,7 +24,7 @@ void TitleScene::Init()
 	GameStart->SetFillColor(sf::Color::Black);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
-	GameStart->SetPosition({ windowBounds.width * 0.5f - 130, windowBounds.height - 850 });////////////
+	GameStart->SetPosition({ windowBounds.width * 0.5f - 1%30, windowBounds.height - 850 });////////////
 	AddGameObject(GameStart);
 
 	//Exit

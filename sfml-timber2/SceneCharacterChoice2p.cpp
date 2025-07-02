@@ -56,6 +56,9 @@ void SceneCharacterChoice2p::Init()
     char2Squirtle->SetScale({ 0.25f , 0.25f });
     char2Squirtle->SetPosition({ 1760.f, 600.f });
 
+    TextGo* Ready = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    TextGo* Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+
     characters.push_back(char1BeardMan);
     characters.push_back(char1Pikachu);
     characters.push_back(char1Squirtle);
@@ -147,11 +150,18 @@ void SceneCharacterChoice2p::Exit()
 }
 void SceneCharacterChoice2p::Update(float dt)
 {
+    if (isChoice)
+    {
+        Ready->SetString("Ready");
+        Ready->SetCharacterSize(50);
+        Ready->SetFillColor(sf::Color::Yellow);
+        Ready->SetPosition({ 470.f, 200.f });
+        Ready->SetOrigin(Origins::MC);
+    }
+
 
     if (isChoice2p)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //���߿� 1P Scene �̸����� ��ü
-        TextGo* Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
         Ready2p->SetString("Ready");
         Ready2p->SetCharacterSize(50);
         Ready2p->SetFillColor(sf::Color::Yellow);
@@ -161,7 +171,7 @@ void SceneCharacterChoice2p::Update(float dt)
 
     if (isChoice2p && isChoice)
     {
-        //SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //���߿� 2P Scene �̸����� ��ü
+        SCENE_MGR.Instance().ChangeScene(SceneIds::SceneMuiltGame);
         return;
     }
 
@@ -201,10 +211,12 @@ void SceneCharacterChoice2p::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        SCENE_MGR.SetChoiceCharacter2p(choiceCharacter2p);
         isChoice2p = true;
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Space))
     {
+        SCENE_MGR.SetChoiceCharacter(choiceCharacter);
         isChoice = true;
     }
 

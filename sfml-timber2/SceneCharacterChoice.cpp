@@ -109,7 +109,6 @@ void SceneCharacterChoice::Update(float dt)
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
         SCENE_MGR.SetChoiceCharacter(choiceCharacter);
-        std::cout << choiceCharacter << std::endl;
         isChoice = true;
     }
     for (int i = 0; i < characterNames.size(); ++i)

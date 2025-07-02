@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClInclude Include="BackgroundElement.h" />
     <ClInclude Include="Branch.h" />
+    <ClInclude Include="CharacterScene.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
@@ -33,6 +36,12 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneCharacterChoice.h" />
     <ClInclude Include="SceneCharacterChoice2p.h" />
+    <ClInclude Include="SceneDev1.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneDev2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SceneMuiltGame.h" />
@@ -51,6 +60,9 @@
   <ItemGroup>
     <ClCompile Include="BackgroundElement.cpp" />
     <ClCompile Include="Branch.cpp" />
+    <ClCompile Include="CharacterScene.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputMgr.cpp" />
@@ -62,10 +74,16 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneCharacterChoice.cpp" />
     <ClCompile Include="SceneCharacterChoice2p.cpp" />
+    <ClCompile Include="SceneDev1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneDev2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
-    <ClCompile Include="SoundGo.cpp" />
     <ClCompile Include="SceneMuiltGame.cpp" />
+    <ClCompile Include="SoundGo.cpp" />
     <ClCompile Include="SpriteGo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

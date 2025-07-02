@@ -16,6 +16,7 @@ public:
     ModeScene();
     void Init() override;
     void Update(float dt) override;
+    void Enter() override;
     //void Update() override;
 
 };

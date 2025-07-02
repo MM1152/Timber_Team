@@ -21,6 +21,14 @@ void SceneCharacterChoice2p::Init()
 
     fontIds.push_back("fonts/KOMIKAP_.ttf");
 
+
+    Scene::Init();
+}
+void SceneCharacterChoice2p::Enter()
+{
+    characterNames.clear();
+    characterNames2p.clear();
+
     SpriteGo* back1 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/background.png"));
     back1->SetScale({ 0.49f , 1.f });
 
@@ -52,6 +60,8 @@ void SceneCharacterChoice2p::Init()
     char2Squirtle->SetOrigin(Origins::MC);
     char2Squirtle->SetPosition({ 1760.f, 600.f });
 
+    Ready = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
 
     characters.push_back(char1BeardMan);
     characters.push_back(char1Pikachu);
@@ -126,20 +136,16 @@ void SceneCharacterChoice2p::Init()
     characterNames2p.push_back(name2Pikachu);
     characterNames2p.push_back(name2Sqirtle);
 
-    Ready = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    Scene::Enter();
 
     choiceCharacter = 0;
     choiceCharacter2p = 0;
     isChoice = false;
     isChoice2p = false;
 
-    Scene::Init();
-
-}
-void SceneCharacterChoice2p::Enter()
-{
-    Scene::Enter();
+    Ready->SetString("");
+    Ready2p->SetString("");
+    
 }
 void SceneCharacterChoice2p::Exit()
 {
@@ -155,7 +161,6 @@ void SceneCharacterChoice2p::Update(float dt)
         Ready->SetPosition({ 470.f, 200.f });
         Ready->SetOrigin(Origins::MC);
     }
-
 
     if (isChoice2p)
     {
@@ -174,6 +179,7 @@ void SceneCharacterChoice2p::Update(float dt)
 
     if (InputMgr::GetKeyDown(sf::Keyboard::Left))
     {
+
         choiceCharacter2p--;
         if (choiceCharacter2p < 0)
         {

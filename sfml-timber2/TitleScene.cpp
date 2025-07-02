@@ -68,6 +68,7 @@ void TitleScene::Update(float dt)
 		Exit->SetFillColor(sf::Color::Black);
 		Exit->SetCharacterSize(100);
 		PlayModeCheck=true;	
+		ExitCheck = false;
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
 	{
@@ -76,6 +77,8 @@ void TitleScene::Update(float dt)
 		Exit->SetFillColor(sf::Color::Red);
 		Exit->SetCharacterSize(90);
 		ExitCheck = true;
+		PlayModeCheck = false;
+
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && PlayModeCheck)
 	{
@@ -83,6 +86,7 @@ void TitleScene::Update(float dt)
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && ExitCheck)
 	{
+		FRAMEWORK.GetWindow().close();
 		//게임종료
 	}
 }

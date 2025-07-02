@@ -75,3 +75,10 @@ void ModeScene::Update(float dt)
 		playMode2pCheck = false;
 	}
 }
+
+void ModeScene::Enter()
+{
+	Text1P->SetFillColor(sf::Color::White);
+	Text2P->SetFillColor(sf::Color::White);
+	Scene::Enter();
+}

@@ -97,7 +97,7 @@ void SceneCharacterChoice2p::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //나중에 1P Scene 이름으로 교체
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //나중에 1P Scene 이름으로 교체
         return;
     }
 

@@ -76,7 +76,6 @@ void SceneCharacterChoice::Init()
     choiceCharacter = 0;
     isChoice = false;
 
-
     Scene::Init();
 
 }
@@ -92,7 +91,7 @@ void SceneCharacterChoice::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //나중에 1P Scene 이름으로 교체
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //나중에 1P Scene 이름으로 교체
         return;
     }
 
@@ -111,7 +110,6 @@ void SceneCharacterChoice::Update(float dt)
         {
             choiceCharacter = 0;
         }
-
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {

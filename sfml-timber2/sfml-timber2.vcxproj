@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundElement.h" />
-    <ClInclude Include="CharacterScene.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="GameObject.h" />
@@ -50,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackgroundElement.cpp" />
-    <ClCompile Include="CharacterScene.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputMgr.cpp" />

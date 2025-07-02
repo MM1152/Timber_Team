@@ -9,7 +9,7 @@
 
 
 SceneGame::SceneGame()
-    : Scene(SceneIds::Game)
+    : Scene(SceneIds::Game1P)
 {
 }
 

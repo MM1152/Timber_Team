@@ -103,6 +103,7 @@ void SceneGame::Update(float dt)
             }
             else
             {
+                SOUND_MGR.Play("Chop");
                 score += 10;
                 uiHud->SetScore(score);
             }

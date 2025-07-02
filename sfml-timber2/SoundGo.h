@@ -26,7 +26,8 @@ public:
 
 	void Init();
 	void Play(std::string id);
-	bool Mute(bool mute);
+	void MuteSet(bool mute);
+	bool MuteGet();
 };
 
 #define SOUND_MGR (SoundGo::Instance())

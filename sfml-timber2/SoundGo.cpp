@@ -10,7 +10,6 @@ SoundGo::~SoundGo()
 {
 }
 
-
 void SoundGo::Init()
 {
 	bufferChop.loadFromFile("sound/chop.wav");
@@ -38,22 +37,12 @@ void SoundGo::Play(std::string id)
 	}
 }
 
-bool SoundGo::Mute(bool mute)
+void SoundGo::MuteSet(bool mute)
 {
-	if (InputMgr::GetKeyDown(sf::Keyboard::Q))
-	{
-		if (currentMuteCheck && !soundMute)
-		{
-			soundMute = mute;
-			currentMuteCheck = false;
-			std::cout << "家府 难扁" << std::endl;
-		}
-		else
-		{
-			soundMute = mute;
-			currentMuteCheck = true;
-			std::cout << "澜家芭" << std::endl;
-		}
-	}
-	return mute;
+	soundMute = mute;
+}
+
+bool SoundGo::MuteGet()
+{
+	return soundMute;
 }

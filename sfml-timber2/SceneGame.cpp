@@ -105,16 +105,22 @@ void SceneGame::Update(float dt)
 
     if (isPlaying)
     {
-        uiHud->SetMuteIcon(true);
-        //家府 酒捞能 弊府扁
-        //if (SOUND_MGR.Mute(true))//@
-        //{
-        //    uiHud->SetMuteIcon(true);
-        //}
-        //else if(SOUND_MGR.Mute(false))
-        //{
-        //    uiHud->SetSoundIcon(true);
-        //}
+        uiHud->SetSoundIcon(true);
+        
+        if (InputMgr::GetKeyDown(sf::Keyboard::Q))
+        {
+            if (SOUND_MGR.MuteGet())
+            {
+                uiHud->SetMuteIcon(true);
+                uiHud->SetSoundIcon(false);
+            }
+            else
+            {
+                uiHud->SetMuteIcon(false);
+                uiHud->SetSoundIcon(true);
+            }
+            SOUND_MGR.MuteSet(!SOUND_MGR.MuteGet());
+        }
 
         if (InputMgr::GetKeyDown(sf::Keyboard::Left))
         {
@@ -194,6 +200,4 @@ void SceneGame::Update(float dt)
             uiHud->SetShowMassage(false);
         }
     }
-
-
 }

@@ -27,8 +27,8 @@ void UiHud::SetTimeBar(float value)
 void UiHud::Init()
 {
 	fontId = "fonts/KOMIKAP_.ttf";
-	texSoundId = "graphics/soundIcon.png";
-	texMuteId = "graphics/muteIcon.png";
+	texSoundId = "graphics/soundicon.png";
+	texMuteId = "graphics/muteicon.png";
 
 	sf::FloatRect bounds = FRAMEWORK.GetWindowBounds();
 
@@ -49,8 +49,10 @@ void UiHud::Init()
 	timeBar.setPosition(bounds.width * 0.5f - timeBarSize.x * 0.5f,
 		bounds.height - 100.f);
 
-	soundIcon.setPosition(20, 20);//@ mute
-	muteIcon.setPosition(20, 20);
+	soundIcon.setPosition(1790,20);//@ mute
+	muteIcon.setPosition(1800,20);
+	soundIcon.setScale(0.2, 0.2);
+	muteIcon.setScale(0.2,0.2);
 
 }
 

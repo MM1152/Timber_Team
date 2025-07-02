@@ -2,7 +2,7 @@
 #include "ModeScene.h"
 
 ModeScene::ModeScene()
-	:Scene(SceneIds::Mode), playModeCheck(false)
+	:Scene(SceneIds::Mode), playMode1pCheck(false), playMode2pCheck(false)
 {
 }
 
@@ -17,12 +17,12 @@ void ModeScene::Init()
 	//Text1P
 	Text1P = new TextGo("fonts/KOMIKAP_.ttf");
 	Text1P->SetString("1P");
-	Text1P->SetCharacterSize(400);
+	Text1P->SetCharacterSize(360);
 	Text1P->SetFillColor(sf::Color::White);
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
 
-	Text1P->SetPosition({ windowBounds.width * 0.5f - 520, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text1P->SetPosition({ windowBounds.width * 0.5f - 520, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text1P);
 
 	//Text2P
@@ -31,10 +31,10 @@ void ModeScene::Init()
 	Text2P->SetCharacterSize(360);
 	Text2P->SetFillColor(sf::Color::White);
 
-	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text2P);
 
-	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////¿À¸®Áø °ª ¼³Á¤ Ãß°¡
+	Text2P->SetPosition({ windowBounds.width * 0.5f + 220, windowBounds.height * 0.5f - 230 });////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	AddGameObject(Text2P);
 
 
@@ -50,12 +50,12 @@ void ModeScene::Update(float dt)
 		Text1P->SetCharacterSize(320);
 		Text2P->SetFillColor(sf::Color::White);
 		Text2P->SetCharacterSize(360);
-		playModeCheck = true;
+		playMode1pCheck = true;
 	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Space) && playModeCheck)
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode1pCheck)
 	{
-		SCENE_MGR.ChangeScene(SceneIds::Character);
-		playModeCheck = false;
+		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
+		playMode1pCheck = false;
 	}
 
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
@@ -64,11 +64,6 @@ void ModeScene::Update(float dt)
 		Text1P->SetCharacterSize(360);
 		Text2P->SetFillColor(sf::Color::Red);
 		Text2P->SetCharacterSize(320);
-		playModeCheck = true;
-	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Space))
-	{
-		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
-		playModeCheck = false;
+		playMode2pCheck = true;
 	}
 }

@@ -9,7 +9,7 @@
 
 
 SceneGame::SceneGame()
-    : Scene(SceneIds::Game)
+    : Scene(SceneIds::Game1P)
 {
 }
 
@@ -116,6 +116,7 @@ void SceneGame::Update(float dt)
             {
                 isPlaying = false;
                 FRAMEWORK.SetTimeScale(0.f);
+                SOUND_MGR.Play("Death");
                 player->SetAlive(false);
 
                 uiHud->SetShowMassage(true);
@@ -123,6 +124,7 @@ void SceneGame::Update(float dt)
             }
             else
             {
+                SOUND_MGR.Play("Chop");
                 score += 10;
                 uiHud->SetScore(score);
             }
@@ -135,7 +137,7 @@ void SceneGame::Update(float dt)
         if (timer <= 0.f)
         {
             timer = 0.f;
-
+            SOUND_MGR.Play("OutOfTime");
             isPlaying = false;
             FRAMEWORK.SetTimeScale(0.f);
             player->SetAlive(false);

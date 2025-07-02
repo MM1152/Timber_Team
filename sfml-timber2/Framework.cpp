@@ -9,10 +9,11 @@ void Framework::Init(int w, int h, const std::string& t)
 
 	TEXTURE_MGR.Load(texIds);
 	FONT_MGR.Load(fontIds);
-	SOUNDBUFFER_MGR.Load(soundIds);
+	//SOUNDBUFFER_MGR.Load(soundIds);
 
 	InputMgr::Init();
 	SCENE_MGR.Init();
+    SOUND_MGR.Init();
 }
 
 void Framework::Do()
@@ -50,7 +51,7 @@ void Framework::Release()
 {
 	SCENE_MGR.Release();
 
-	SOUNDBUFFER_MGR.Unload(soundIds);
+	//SOUNDBUFFER_MGR.Unload(soundIds);
 	FONT_MGR.Unload(fontIds);
 	TEXTURE_MGR.Unload(texIds);
 }

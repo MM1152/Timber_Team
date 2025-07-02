@@ -1,9 +1,6 @@
 #include "stdafx.h"
-#include "SceneCharacterChoice.h"
-#include "SpriteGo.h"
-#include "TextGo.h"
 
-SceneCharacterChoice::SceneCharacterChoice()
+SceneCharacterChoice::SceneCharacterChoice()    
 	: Scene(SceneIds::CharacterChoice)
 {
 
@@ -29,12 +26,10 @@ void SceneCharacterChoice::Init()
 
     SpriteGo* char2 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
     char2->SetOrigin(Origins::MC);
-    char2->SetScale({ 0.5f , 0.5f });
     char2->SetPosition({ 950.f, 500.f });
 
     SpriteGo*  char3 = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
     char3->SetOrigin(Origins::MC);
-    char3->SetScale({ 0.25f , 0.25f });
     char3->SetPosition({ 1550.f, 500.f });
 
     characters.push_back(char1);
@@ -76,7 +71,6 @@ void SceneCharacterChoice::Init()
     choiceCharacter = 0;
     isChoice = false;
 
-
     Scene::Init();
 
 }
@@ -92,7 +86,7 @@ void SceneCharacterChoice::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game);
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //���߿� 1P Scene �̸����� ��ü
         return;
     }
 
@@ -111,12 +105,11 @@ void SceneCharacterChoice::Update(float dt)
         {
             choiceCharacter = 0;
         }
-
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
         SCENE_MGR.SetChoiceCharacter(choiceCharacter);
-
+        std::cout << choiceCharacter << std::endl;
         isChoice = true;
     }
     for (int i = 0; i < characterNames.size(); ++i)

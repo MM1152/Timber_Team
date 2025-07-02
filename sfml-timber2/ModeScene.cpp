@@ -51,12 +51,14 @@ void ModeScene::Update(float dt)
 		Text2P->SetFillColor(sf::Color::White);
 		Text2P->SetCharacterSize(360);
 		playMode1pCheck = true;
+		playMode2pCheck = false;
 	}
 	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode1pCheck)
 	{
 		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
 		playMode1pCheck = false;
 	}
+
 
 	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
 	{
@@ -65,5 +67,11 @@ void ModeScene::Update(float dt)
 		Text2P->SetFillColor(sf::Color::Red);
 		Text2P->SetCharacterSize(320);
 		playMode2pCheck = true;
+		playMode1pCheck = false;
+	}
+	if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode2pCheck)
+	{
+		SCENE_MGR.ChangeScene(SceneIds::CharacterChoice2p);
+		playMode2pCheck = false;
 	}
 }

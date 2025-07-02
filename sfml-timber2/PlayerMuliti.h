@@ -20,7 +20,7 @@ protected:
 
 	void SetSide(Sides side);
 public:
-	PlayerMuliti(const std::string& name , sf::Keyboard::Key key1, sf::Keyboard::Key key2);
+	PlayerMuliti(const std::string& name , sf::Keyboard::Key key1, sf::Keyboard::Key key2, int index);
 	~PlayerMuliti() override;
 
 	void SetPosition(const sf::Vector2f& pos);

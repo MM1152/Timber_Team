@@ -13,13 +13,25 @@ void PlayerMuliti::SetSide(Sides side)
 	}
 }
 
-PlayerMuliti::PlayerMuliti(const std::string& name, sf::Keyboard::Key key1, sf::Keyboard::Key key2)
+PlayerMuliti::PlayerMuliti(const std::string& name, sf::Keyboard::Key key1, sf::Keyboard::Key key2, int index)
 	:GameObject(name)
 	, key1(key1)
 	, key2(key2)
 	, isDie(false)
 {
-	texId = "graphics/player.png";
+	switch (index)
+	{
+	case 0:
+		texId = "graphics/player.png";
+		break;
+	case 1:
+		texId = "graphics/pikachu.png";
+		break;
+	case 2:
+		texId = "graphics/turtle.png";
+		break;
+	}
+
 	ripId = "graphics/rip.png";
 	axeId = "graphics/axe.png";
 }

@@ -23,6 +23,8 @@ void SceneMuiltGame::Init()
 	texIds.push_back(IMG"rip.png");
 	texIds.push_back(IMG"axe.png");
 	texIds.push_back(IMG"log.png");
+	texIds.push_back(IMG"pikachu.png");
+	texIds.push_back(IMG"turtle.png");
 	fontIds.push_back(FONT);
 	Scene::Init();
 }
@@ -38,8 +40,8 @@ void SceneMuiltGame::Enter()
 	SpriteGo* backGround2 = new SpriteGo(IMG"background.png");
 	SpriteGo* tree1 = new SpriteGo(IMG"tree.png");
 	SpriteGo* tree2 = new SpriteGo(IMG"tree.png");
-	player1 = new PlayerMuliti("Player1", sf::Keyboard::A, sf::Keyboard::D);
-	player2 = new PlayerMuliti("Player2", sf::Keyboard::Left, sf::Keyboard::Right);
+	player1 = new PlayerMuliti("Player1", sf::Keyboard::A, sf::Keyboard::D, SCENE_MGR.GetChoiceCharacter());
+	player2 = new PlayerMuliti("Player2", sf::Keyboard::Left, sf::Keyboard::Right, SCENE_MGR.GetChoiceCharacter2p());
 	branch1 = new Branch(IMG"branch.png", sf::Keyboard::A, sf::Keyboard::D, "branch1");
 	branch2 = new Branch(IMG"branch.png", sf::Keyboard::Left, sf::Keyboard::Right, "branch2");
 	textScore1 = new TextScore(sf::Keyboard::A, sf::Keyboard::D, FONT);

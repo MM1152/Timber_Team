@@ -38,26 +38,20 @@ void SceneCharacterChoice2p::Init()
 
     SpriteGo* char1Pikachu = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
     char1Pikachu->SetOrigin(Origins::MC);
-    char1Pikachu->SetScale({ 0.5f , 0.5f });
     char1Pikachu->SetPosition({ 470.f, 600.f });
 
     SpriteGo* char2Pikachu = (SpriteGo*)AddGameObject(new SpriteGo("graphics/pikachu.png"));
     char2Pikachu->SetOrigin(Origins::MC);
-    char2Pikachu->SetScale({ 0.5f , 0.5f });
     char2Pikachu->SetPosition({ 1430.f, 600.f });
 
     SpriteGo* char1Squirtle = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
     char1Squirtle->SetOrigin(Origins::MC);
-    char1Squirtle->SetScale({ 0.25f , 0.25f });
     char1Squirtle->SetPosition({ 800.f, 600.f });
 
     SpriteGo* char2Squirtle = (SpriteGo*)AddGameObject(new SpriteGo("graphics/turtle.png"));
     char2Squirtle->SetOrigin(Origins::MC);
-    char2Squirtle->SetScale({ 0.25f , 0.25f });
     char2Squirtle->SetPosition({ 1760.f, 600.f });
 
-    TextGo* Ready = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
-    TextGo* Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
 
     characters.push_back(char1BeardMan);
     characters.push_back(char1Pikachu);
@@ -132,6 +126,9 @@ void SceneCharacterChoice2p::Init()
     characterNames2p.push_back(name2Pikachu);
     characterNames2p.push_back(name2Sqirtle);
 
+    Ready = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+    Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
+
     choiceCharacter = 0;
     choiceCharacter2p = 0;
     isChoice = false;
@@ -154,7 +151,7 @@ void SceneCharacterChoice2p::Update(float dt)
     {
         Ready->SetString("Ready");
         Ready->SetCharacterSize(50);
-        Ready->SetFillColor(sf::Color::Yellow);
+        Ready->SetFillColor(sf::Color::Red);
         Ready->SetPosition({ 470.f, 200.f });
         Ready->SetOrigin(Origins::MC);
     }
@@ -165,7 +162,7 @@ void SceneCharacterChoice2p::Update(float dt)
         Ready2p->SetString("Ready");
         Ready2p->SetCharacterSize(50);
         Ready2p->SetFillColor(sf::Color::Yellow);
-        Ready2p->SetPosition({ 470.f, 200.f });
+        Ready2p->SetPosition({ 1430.f, 200.f });
         Ready2p->SetOrigin(Origins::MC);
     }
 
@@ -211,11 +208,13 @@ void SceneCharacterChoice2p::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        std::cout << choiceCharacter2p << std::endl;
         SCENE_MGR.SetChoiceCharacter2p(choiceCharacter2p);
         isChoice2p = true;
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Space))
     {
+        std::cout << choiceCharacter << std::endl;
         SCENE_MGR.SetChoiceCharacter(choiceCharacter);
         isChoice = true;
     }

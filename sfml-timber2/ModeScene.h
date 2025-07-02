@@ -9,6 +9,7 @@ protected:
     TextGo* Text2P;
     bool playMode1pCheck;
     bool playMode2pCheck;
+    int choicePoint = 0;
 
 
 public:

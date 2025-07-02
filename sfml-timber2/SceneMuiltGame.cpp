@@ -178,6 +178,7 @@ void SceneMuiltGame::Update(float dt)
 			textScore2->Reset();
 			textCenter->Reset();
 			timer->Reset();
+			textCenter->SetString("");
 		}
 	}
 }

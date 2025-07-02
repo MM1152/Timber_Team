@@ -150,9 +150,7 @@ void SceneCharacterChoice2p::Update(float dt)
 
     if (isChoice2p)
     {
-
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //³ªÁß¿¡ 1P Scene ÀÌ¸§À¸·Î ±³Ã¼
-
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //ï¿½ï¿½ï¿½ß¿ï¿½ 1P Scene ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
         TextGo* Ready2p = (TextGo*)AddGameObject(new TextGo("fonts/KOMIKAP_.ttf"));
         Ready2p->SetString("Ready");
         Ready2p->SetCharacterSize(50);
@@ -161,12 +159,11 @@ void SceneCharacterChoice2p::Update(float dt)
         Ready2p->SetOrigin(Origins::MC);
     }
 
-    //if (isChoice2p && isChoice)
-    //{
-    //    SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //³ªÁß¿¡ 2P Scene ÀÌ¸§À¸·Î ±³Ã¼
-
-    //    return;
-    //}
+    if (isChoice2p && isChoice)
+    {
+        //SCENE_MGR.Instance().ChangeScene(SceneIds::Game);    //ï¿½ï¿½ï¿½ß¿ï¿½ 2P Scene ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+        return;
+    }
 
     if (InputMgr::GetKeyDown(sf::Keyboard::Left))
     {

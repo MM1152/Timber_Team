@@ -88,7 +88,7 @@ void SceneCharacterChoice::Update(float dt)
 {
     if (isChoice)
     {
-        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //³ªÁß¿¡ 1P Scene ÀÌ¸§À¸·Î ±³Ã¼
+        SCENE_MGR.Instance().ChangeScene(SceneIds::Game1P);    //ï¿½ï¿½ï¿½ß¿ï¿½ 1P Scene ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
         return;
     }
 
@@ -110,9 +110,10 @@ void SceneCharacterChoice::Update(float dt)
     }
     if (InputMgr::GetKeyDown(sf::Keyboard::Enter))
     {
+        SCENE_MGR.SetChoiceCharacter(choiceCharacter);
+
         isChoice = true;
     }
-
     for (int i = 0; i < characterNames.size(); ++i)
     {
         if (i == choiceCharacter)
@@ -124,14 +125,6 @@ void SceneCharacterChoice::Update(float dt)
             characterNames[i]->SetFillColor(sf::Color::White);
         }
     }
-
-    if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
-    {
-        SCENE_MGR.ChangeScene(SceneIds::Mode);
-      
-    }
-
-
 }
 
 

@@ -66,17 +66,4 @@ void ModeScene::Update(float dt)
 		Text2P->SetCharacterSize(320);
 		playMode2pCheck = true;
 	}
-	//if (InputMgr::GetKeyDown(sf::Keyboard::Enter) && playMode2pCheck)
-	//{
-	//	SCENE_MGR.ChangeScene(SceneIds::CharacterChoice2p);
-	//	playMode2pCheck = false;
-	//	SCENE_MGR.ChangeScene(SceneIds::CharacterChoice);
-	//	playModeCheck = false;
-	//}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Escape))
-	{
-		SCENE_MGR.ChangeScene(SceneIds::Title);
-		playMode1pCheck = false;
-		playMode2pCheck = false;
-	}
 }

@@ -27,6 +27,7 @@ void SoundGo::Init()
 
 void SoundGo::Play(std::string id)
 {
+
 	if (id == "Chop" && soundMute)
 	{
 		soundChop.play();
@@ -38,6 +39,12 @@ void SoundGo::Play(std::string id)
 	if (id == "OutOfTime" && soundMute)
 	{
 		soundOutOfTime.play();
+	}
+	if (id == "spark" && soundMute) {
+		soundSpark.play();
+	}
+	if (id == "wave" && soundMute) {
+		soundWave.play();
 	}
 }
 
